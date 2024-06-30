@@ -75,8 +75,3 @@ const uploadImageInput = $.getElementById('user-profile-pic-input')
 panelToggler.addEventListener('click',function(){
     panelList.classList.toggle('panel-list--active')
 })
-
-
-const isactive = () => {
-    return true
-}
