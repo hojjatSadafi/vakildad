@@ -77,6 +77,3 @@ panelToggler.addEventListener('click',function(){
 })
 
 
-const isactive = () => {
-    return true
-}
