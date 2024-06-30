@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/grid.css">
+    <link rel="stylesheet" href="style/panelStyle.css">
+    <script src="js/panel.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__mobile-wrapper"> 
+               <div class="header__mobile-menu">
+                <span class="line"></span>
+               </div> 
+                
+            <div class="header-wrapper">
+                <div class="header__btns-wrapper">
+                    <a href="loginForm.html?PColor=1e88e5" class="login-btn header__login-btn"><span class="header__login-btn-text">ورود/ثبت نام</span>
+                        <svg class="header__login-icon icon icon-tabler icon-tabler-login" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M15 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"></path>
+                            <path d="M21 12h-13l3 -3"></path>
+                            <path d="M11 15l-3 -3"></path>
+                        </svg>
+                    </a>
+                    <div class="header__theme-changer">    
+                        <svg class="icon icon-tabler icon-tabler-sun-high" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z"></path>
+                            <path d="M6.343 17.657l-1.414 1.414"></path>
+                            <path d="M6.343 6.343l-1.414 -1.414"></path>
+                            <path d="M17.657 6.343l1.414 -1.414"></path>
+                            <path d="M17.657 17.657l1.414 1.414"></path>
+                            <path d="M4 12h-2"></path>
+                            <path d="M12 4v-2"></path>
+                            <path d="M20 12h2"></path>
+                            <path d="M12 20v2"></path>
+                        </svg>
+                        <svg class="icon icon-tabler icon-tabler-moon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+                        </svg>
+                        <div class="circle"></div>
+                    </div>
+                    <a href="http://www.goftino.com" class="header__support-link">
+                        <svg class="header__support-icon" fill="#999" height="16px" width="16px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 361.014 361.014" xml:space="preserve"><g><g id="Layer_5_47_"><path d="M331.035,126.94H318.01c-3.563,0-3.682-2.333-3.805-3.494C307.375,59.094,252.77,8.791,186.637,8.791h-12.26
+                            c-65.644,0-119.929,49.56-127.409,113.229c-0.191,1.631-0.291,4.92-3.291,4.92H29.978C20.987,126.94,0,136.401,0,184.18v25.075
+                            c0,35.436,20.987,43.609,29.978,43.609h43.584c8.991,0,16.347-7.356,16.347-16.347v-93.23c0-8.991-7.356-16.347-16.347-16.347
+                            c0,0-2.052-0.18-1.529-3.835c7.192-50.319,50.129-89.313,102.344-89.313h12.26c51.86,0,94.912,38.418,102.2,88.288
+                            c0.235,1.608,1.111,4.86-1.385,4.86c-8.991,0-16.347,7.356-16.347,16.347v93.23c0,8.991,7.356,16.347,16.347,16.347h8.184
+                            c2.25,0,1.868,1.798,1.667,2.704c-6.667,30.104-21.637,64.256-55.238,64.256h-24.889c-2.54,0-3.167-1.861-3.65-2.743
+                            c-4.032-7.367-11.851-12.364-20.841-12.364h-22.933c-13.118,0-23.753,10.634-23.753,23.753c0,13.119,10.635,23.752,23.753,23.752
+                            h22.933c9.112,0,17.023-5.132,21.005-12.662c0.348-0.658,0.633-2.026,3.321-2.026h25.054c22.823,0,53.365-11.341,69.259-65.373
+                            c1.694-5.758,3.068-11.496,4.187-17.026c0.154-0.761,0.25-2.27,2.625-2.27h12.9c8.991,0,29.978-8.174,29.978-43.609v-25.075
+                            C361.013,137.082,340.026,126.94,331.035,126.94z"></path></g></g>
+                        </svg>
+                        <span>پشتیبانی</span>
+                    </a>
+                    <div class="call-btn" title="برای کپی شدن شماره تماس کلیک کنید">
+                        <svg class="icon icon-tabler icon-tabler-phone" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
+                          </svg>
+                    </div>
+                </div>
+                <nav class="header__nav">
+                    <ul class="nav-list">
+                        <li class="nav-list__item"><p class="nav-list__link">وضعیت حساب:</p></li>
+                        <li class="nav-list__item"><p class="nav-list__link">در انتظار تایید</p></li>
+                    </ul>
+                </nav>   
+                <div class="header__logo-box">
+                    <span class="header__logo-text">وکیل داد</span>
+                
+                <svg class="icon icon-tabler icon-tabler-gavel" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M13 10l7.383 7.418c.823 .82 .823 2.148 0 2.967a2.11 2.11 0 0 1 -2.976 0l-7.407 -7.385"></path>
+                    <path d="M6 9l4 4"></path>
+                    <path d="M13 10l-4 -4"></path>
+                    <path d="M3 21h7"></path>
+                    <path d="M6.793 15.793l-3.586 -3.586a1 1 0 0 1 0 -1.414l2.293 -2.293l.5 .5l3 -3l-.5 -.5l2.293 -2.293a1 1 0 0 1 1.414 0l3.586 3.586a1 1 0 0 1 0 1.414l-2.293 2.293l-.5 -.5l-3 3l.5 .5l-2.293 2.293a1 1 0 0 1 -1.414 0z"></path>
+                </svg>
+                </div>
+            </div>
+
+            <div class="header__mobile-logo-box">
+                <span class="header__logo-text">وکیل داد</span>
+                <svg class="icon icon-tabler icon-tabler-gavel" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M13 10l7.383 7.418c.823 .82 .823 2.148 0 2.967a2.11 2.11 0 0 1 -2.976 0l-7.407 -7.385"></path>
+                    <path d="M6 9l4 4"></path>
+                    <path d="M13 10l-4 -4"></path>
+                    <path d="M3 21h7"></path>
+                    <path d="M6.793 15.793l-3.586 -3.586a1 1 0 0 1 0 -1.414l2.293 -2.293l.5 .5l3 -3l-.5 -.5l2.293 -2.293a1 1 0 0 1 1.414 0l3.586 3.586a1 1 0 0 1 0 1.414l-2.293 2.293l-.5 -.5l-3 3l.5 .5l-2.293 2.293a1 1 0 0 1 -1.414 0z"></path>
+                </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="main__content-wrapper">
+                <ul class="panel-list">
+                    <span class="panel-list__img-wrapper"><img src="images/defaultProfile.png" alt="" class="panel-list__img"></span>
+                    <li class="panel-list__item panel-list__item--active">
+                        <div class="panel-list__profile">پروفایل</div>
+                    </li>
+                    <li class="panel-list__item">
+                        <div class="panel-list__wallet">کیف پول</div>
+                    </li>
+                    <li class="panel-list__item">
+                        <div class="panel-list__logout">خروج از حساب</div>
+                    </li>
+                    <li class="panel-list__item">
+                        <div class="panel-list__delete-accont">حذف حساب</div>
+                    </li>
+                    <div class="panel-toggler">
+                        <span class="linePanel"></span>
+                    </div>
+                </ul>
+                <div class="main__left-box">
+                    <form action="" method="post" class="vakil-form" enctype="multipart/form-data">
+                        <div class="vakil-form__photo-upload-wrapper">
+                            <img src="images/simple-user-default-icon-free-png.png" alt="" class="vakil-form__profile-photo" width="100%">
+                            <label for="user-profile-pic-input" class="profile-pic-choose">تصویر پروفایل انتخاب کنید</label>
+                            <input type="file" id="user-profile-pic-input" required name="vakil-photo" accept="image/*">
+                        </div>
+                        <div class="vakil-form__inputs">
+                            <div class="vakil-form__input-label-wrapper">
+                                <label for="user-name-family" class="vakil-form__label">نام و نام خانوادگی</label>
+                                <input title="نام و نام خانوادگی کامل خود را وارد کنید" type="text" id="user-name-family" required maxlength="50" class="vakil-form__input" autocomplete="off" name="vakil-name">
+                            </div>
+                            <div class="vakil-form__input-label-wrapper">
+                                <label for="phone" class="vakil-form__label">شماره تماس</label>
+                                <input title="شماره تلفن خودتان را وارد کنید" type="text" id="phone" required maxlength="11" class="vakil-form__input" autocomplete="off" name="vakil-phone" pattern="[0-9]{11}">
+                            </div>
+                            <div class="vakil-form__input-label-wrapper">
+                                <label for="parvaneNumber" class="vakil-form__label">شماره پروانه وکالت</label>
+                                <input type="text" id="parvaneNumber" required maxlength="5" class="vakil-form__input" autocomplete="off" name="vakil-parvane" pattern="[0-9]{11}">
+                            </div>
+                            <div class="vakil-form__input-label-wrapper">
+                                <label for="cardNumber" class="vakil-form__label">شماره کارت بانکی</label>
+                                <input type="text" id="cardNumber" required maxlength="16" class="vakil-form__input" autocomplete="off" name="vakil-card-number" pattern="[0-9]{11}">
+                            </div>
+                            <div class="vakil-form__input-label-wrapper">
+                                <label for="state" class="vakil-form__label">انتخاب استان</label>
+                                <select id="state" required class="vakil-form__input" name="state">
+                                </select>
+                            </div>
+                            <div class="vakil-form__input-label-wrapper">
+                                <label for="city" class="vakil-form__label">انتخاب شهر</label>
+                                <select id="city" required class="vakil-form__input" name="city">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="vakil-form__about-self-wrapper">
+                            <div class="text-area-wrapper">
+                                <label for="aboutSelf" class="vakil-form__label">توضیحات و تخصصات شما</label>
+                                <textarea title="توضیحاتی مختصر راجب خودتان" id="aboutSelf" cols="30" rows="5" class="vakil-form__input" maxlength="100" required name="vakil-details"></textarea>
+                            </div>
+                            <div class="text-area-wrapper">
+                                <label for="resume" class="vakil-form__label">رزومه کاری شما</label>
+                                <textarea id="resume" cols="30" rows="7" class="vakil-form__input" required name="vakil-resume"></textarea>
+                            </div>
+                            <div class="text-area-wrapper">
+                                <label for="address" class="vakil-form__label">آدرس</label>
+                                <textarea id="address" cols="30" rows="7" class="vakil-form__input" required name="vakil-address"></textarea>
+                            </div>
+                            <p class="skill-select-link">انتخاب تخصص</p>
+                        </div>
+                        
+                        <div class="vakil-form__sub-button-wrapper">
+                            <button type="submit" class="vakil-form__submit-btn">اعمال ویرایش</button>
+                            <div onclick="history.go(-1)" class="vakil-form__back-btn">لغو و بازگشت</div>
+                        </div>
+                    </form>  
+                </div>
+            </div>
+        </div>
+    </main>
+ 
+</body>
+</html>

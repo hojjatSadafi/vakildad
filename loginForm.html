@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vakil Dad</title>
+    <link rel="shortcut icon" href="images/faw2.png" type="image/png">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/grid.css">
+    <link rel="stylesheet" href="style/loginStyle.css">
+</head>
+<body>
+    <div class="container">
+        <section class="login">
+          <div class="login-card no-width-pad">
+            <form action="" class="login-form">
+                <div class="login-form__input-wrapper">
+                    <label for="login-phone" class="form-label">شماره تماس</label>
+                    <input title="شماره تلفن خودتان را وارد کنید" type="text" id="login-phone" required maxlength="30" class="vakil-form__input" autocomplete="off" name="vakil-phone" pattern="[0-9]{11}">
+                </div>
+              
+                <div class="sub-button-wrapper">
+                    <button type="submit" class="submit-btn">ثبت اطلاعات</button>
+                    <div onclick="history.go(-1)" class="back-btn">لغو و بازگشت</div>
+                </div>
+                <div class="login-form__link">اکانت ندارید؟ساخت اکانت</div>
+            </form>
+        </div>
+       
+        </section>
+    </div>
+
+    <div class="skill-modal">
+        <div class="skill-modal__x"></div>
+        <h2 class="skill-modal__title">تخصص خود را انتخواب کنید</h2>
+    </div>
+    <div class="cover"></div>
+    <script src="js/loginPagejs.js"></script>
+</body>
+</html>

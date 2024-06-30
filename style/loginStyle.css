@@ -1,0 +1,539 @@
+@font-face {
+    font-family: title;
+    src: url(../fonts/Far.Decorative\ Bold.ttf);
+}
+@font-face {
+    font-family: BkoodakBold;
+    src: url(../fonts/B\ Koodak\ Bold_0.ttf);
+}
+@font-face {
+    font-family: soraya;
+    src: url(../fonts/A_Soraya.ttf);
+}
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+html{
+    font-size: 62.5%;
+    --primary-color:#039be5;
+}
+/* component */
+.no-width-pad{
+    width: unset !important;
+    padding: 0px 2rem !important;
+}
+.basis-80{
+    flex-basis: 80%;
+}
+
+body{
+    font-size: 1.6rem;
+    /* overflow: hidden; */
+    background-color: #bdbdbd;
+    object-fit: cover;
+    min-height: 100vh;
+    font-family: BkoodakBold;
+    background-image: linear-gradient(45deg,var(--primary-color),#616161);
+}
+
+.cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,.5);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+    transition: all 180ms ease-in;
+}
+.cover--show{
+    opacity: 1;
+    visibility: visible;
+}
+
+.login {
+    min-height: 100vh;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    color: #fff;
+}
+.login-card{
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: row-reverse;
+    width: 60%;
+    background-color:rgba(255,255,255,.2);
+    border-radius: 2rem;
+    margin: 0px auto;
+    border-left: 1.5rem solid var(--primary-color);
+    border-right: 1.5rem solid var(--primary-color);
+}
+.login__modal-box {
+    position: relative;
+    width: 60%;
+    min-height: 30rem;
+    background-color:rgba(255,255,255,.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 3rem;
+    transition: all 100ms ease-in;
+}
+.scales-image{
+    width: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    max-height: 30rem;
+    filter: blur(5px);
+}
+.login__modal-title {
+    font-size: 3rem;
+    color: white;
+    font-family: title;
+    z-index: 10;
+}
+.login__modal-btn-wrapper {
+    display: flex;
+    gap: 6rem;
+    z-index: 10;
+}
+.login__modal-btn {
+    padding: .5rem 2rem;
+   
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.login__modal-btn::after , .login__modal-btn::before{
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: all 180ms ease-in;
+    z-index: -1;
+}
+.login__modal-btn::after{
+    left: 0;
+    top: 0;
+}
+.login__modal-btn::before{
+    right: 0;
+    top: 0;
+}
+.login__modal-btn:hover::after{
+    width: 50%;
+}
+.login__modal-btn:hover::before{
+    width: 50%;
+}
+.x{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-family: poppins;
+    cursor: pointer;
+    padding: .5rem;
+}
+
+/* form */
+.form-left-box {
+    margin-left: 5rem;
+    flex-basis: 30%;
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    
+}
+.form-left-box__img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: .5;
+}
+.form-left-box__title{
+    
+    margin-top: 4rem;
+    font-size: 2rem;
+    font-family: soraya;
+    color: #fff;
+    z-index: 10;
+}
+/**/
+.movakel-form {
+    flex-basis: 70%;
+    
+   
+    min-height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.fild-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.sub-button-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.form-label {
+    text-align: right;
+    color: #fff;
+    margin-bottom: .4rem;
+}
+.form-input {
+    border-radius: .5rem;
+    color: var(--primary-color);
+    outline: none;
+    border: none;
+    padding: .5rem 1.5rem;
+    font-size: 1.8rem;
+    direction: rtl;
+    text-align: right;
+}
+.submit-btn ,.back-btn ,
+.vakil-form__submit-btn, .vakil-form__back-btn{
+    padding: .5rem 1rem;
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    font-family: bKoodakBold;
+    min-width: 11rem;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    border-radius: .5rem;
+}
+
+/* 
+    vakil form
+*/
+.vakil-form {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    direction: rtl;
+    padding: 3rem 5rem;
+    gap: 1.5rem;
+}
+.vakil-form__inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1rem;
+}
+.vakil-form__input-label-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.vakil-form__label {
+
+}
+.vakil-form__input {
+    outline: none;
+    border: 1px solid var(--primary-color);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    resize: none;
+    width: 100%;
+    font-size: 1.6rem;
+}
+.vakil-form__about-self-wrapper {
+
+}
+.text-area-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: .5rem;
+}
+.skill-select-link{
+    text-align: center;
+    margin-top: .5rem;
+    background-color: var(--primary-color);
+    border-radius: .5rem;
+    padding: .5rem 0px;
+    cursor: pointer;
+    color: #fff;
+}
+.vakil-form__photo-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+.vakil-form__profile-photo {
+    height: 20rem;
+    width: 20rem;
+    object-fit: cover;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 1.5rem;
+}
+.profile-pic-choose {
+    background-color: var(--primary-color);
+    padding: 1rem 1.5rem;
+    color: white;
+    cursor: pointer;
+    border-radius: .6rem;
+    transition: all 180ms ease-in;
+}
+.profile-pic-choose:hover{
+    transform: scale(1.1);
+}
+#user-profile-pic-input{
+    width: 0%;
+    height: 0px;
+}
+
+.rule-accept-wrapper{
+    grid-column: 1/4;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkbox-input[type=checkbox]{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--primary-color)!important;
+}
+
+.vakil-form__label{
+
+}
+
+.vakil-form__sub-button-wrapper{
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1/4;
+}
+/* 
+
+*/
+.submit-btn,
+.back-btn,
+.vakil-form__submit-btn,
+.vakil-form__back-btn {
+    transition: all 180ms ease-in;
+}
+.submit-btn:hover,
+.back-btn:hover,
+.vakil-form__submit-btn:hover,
+.vakil-form__back-btn:hover {
+    transform: scale(1.1);
+}
+/* modal vakil form */
+.skill-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: max-content;
+    max-width: 60rem;
+    background-color: rgba(255,255,255,.2);
+    direction: rtl;
+    padding: 6rem 2rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(90px,auto));
+    gap: 2.5rem;
+    justify-items: center;
+    border: 3px solid var(--primary-color);
+    border-radius: 1rem;
+    backdrop-filter: blur(2px);
+    transition: all 180ms ease-in;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 50;
+}
+.skill-modal--show{
+    opacity: 1;
+    visibility: visible;
+
+}
+.skill-modal__title{
+    position: absolute;
+    top: 1.2rem;
+    font-size: 2.3rem;
+    color: #fff;
+    letter-spacing: .1rem;
+}
+.skill-modal__input-wrapper {
+    width: max-content;
+    background-color: var(--primary-color);
+    border-radius: .5rem;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+}
+.skill-modal__label {
+    color: #fff;
+}
+.skill-modal__check-box {
+    
+}
+.skill-modal__x{
+    position: absolute;
+    right: 2rem;
+    top: .6rem;
+    cursor: pointer;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 4rem;
+}
+.skill-modal__x::before,.skill-modal__x::after{
+    content: '';
+    position: absolute;
+    width: 3.5rem;
+    height: .6rem;
+    border-radius: 1rem;
+    background-color: var(--primary-color);
+}
+.skill-modal__x::before{
+    transform: rotate(45deg);
+}
+.skill-modal__x::after{
+    transform: rotate(-45deg);
+}
+/* 
+login form
+*/
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem 0px;
+}
+.login-form__input-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.login-form__link{
+    color: var(--primary-color);
+    text-shadow: 0 0 1rem #fff;
+    cursor: pointer;
+    transition: all 180ms ease-in;
+    text-align: center;
+}
+.login-form__link:hover{
+    color: #fff;
+
+}
+
+
+@media screen and (max-width: 1200px){
+
+    .form-left-box__image{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .form-left-box{
+        margin-left: 2rem;
+    }
+    .login-card{
+        flex-basis: 80%;
+    }
+    .vakil-form__profile-photo {
+        width: 10rem;
+        height: 10rem;
+    }
+    .profile-pic-choose{
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    .vakil-form__label{
+        text-align: center;
+        font-size: 1.4rem;
+    }
+    textarea.vakil-form__input{
+        height: 6rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .rule-accept-wrapper,.vakil-form__sub-button-wrapper{
+        grid-column: 1;
+    }
+    .vakil-form{
+        grid-template-columns: 1fr;
+    }
+    .vakil-form__photo-upload-wrapper{
+        grid-row: 1/span 1;
+    }
+    .form-input{
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .login__modal-box{
+        width: 100%;
+    }
+    .form-left-box{
+        display: none;
+    }
+    .vakil-form__sub-button-wrapper{
+        flex-direction: column;
+        gap: .5rem;
+    }
+}
+@media screen and (max-width: 400px){
+    .sub-button-wrapper{
+        gap: 1rem;
+        flex-direction: column;
+    }
+    .form-input{
+        width: 80%;
+        margin: 0px auto;
+    }
+    .form-label{
+        text-align: center;
+    }
+    /* .submit-btn,
+    .back-btn{
+        min-width: unset;
+    } */
+    .vakil-form{
+        padding: .5rem 1rem;
+    }
+}
