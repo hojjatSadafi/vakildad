@@ -297,7 +297,7 @@ body{
     object-fit: cover;
     background-color: #fff;
     border-radius: 50%;
-    padding: 1.5rem;
+    padding: .8rem;
 }
 .profile-pic-choose {
     background-color: var(--primary-color);
