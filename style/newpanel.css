@@ -183,6 +183,29 @@ body {
     justify-content: center;
     gap: 1rem;
 }
+.vakil-form__span-for-input {
+    position: relative;   
+    
+}
+.vakil-form__span-for-input::after {
+    position: absolute;
+    content: '';
+    right: 0;
+    bottom: 0;
+    height: 0%;
+    width: .5rem;
+    transition: all 180ms ease;
+    border-top-right-radius: 1rem;
+}
+.vakil-form__span-for-input:hover::after {
+    background-color: var(--primary-color);
+    height:100%;
+}
+.vakil-form__span-for-input:focus::after {
+    background-color: var(--primary-color);
+    height:100%;
+}
+
 .vakil-form__input{
     display: block;
     text-align: right;
@@ -193,16 +216,16 @@ body {
     font-family: vazir;
     color: var(--text-color);
     border-radius: .7rem;
-    background-color: var(--bg-color);
-    border: 2px solid transparent;
-    border-bottom-color: var(--primary-color);
     transition: all 180ms ease;
 }
-.vakil-form__input:hover{
-   border-right-color: var(--primary-color);
+.vakil-form__input::placeholder {
+    transition: all 180ms ease;
 }
-.vakil-form__input:focus{
-   border-color: var(--primary-color);
+.vakil-form__input:focus::placeholder {
+    color: var(--primary-color);
+}
+
+.vakil-form__input:hover{
 }
 
 @media (max-width:992px) {
