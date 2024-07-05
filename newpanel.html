@@ -19,7 +19,7 @@
     </svg>
     <div class="template">
         <div class="temlate-left">
-            <img src="images/judgeicons/5.png" alt="" class="temlate-left__img" id="temlate-left__img">
+            <img src="images/judgeicons/5.svg" alt="" class="temlate-left__img" id="temlate-left__img">
             <!-- <h3 class="template-left__title">وکیل داد مرجع تخصصی وکیل یابی</h3>
             <div class="template-left__icon-wrapper">
                 <div class="round-border" id="left-arrow">
@@ -40,7 +40,11 @@
                 <span class="template-right__select-rule" id="select-rule-movakel">موکل</span>
             </div>
             <form action="" class="vakil-form" id="vakil-form">
+                <input placeholder="نام و نام خانوادگی" type="text" id="vakil__name-family" name="vakil__name-family" class="vakil-form__input" required minlength="5">
+                <input placeholder="شماره تماس" title="شماره تلفن خودتان را وارد کنید" type="text" id="vakil__phone" required maxlength="11" class="vakil-form__input" autocomplete="off" name="vakil__phone" pattern="[0-9]{11}">
                 
+                <input placeholder="شماره پروانه وکالت" type="text" id="vakil__parvaneNumber" required maxlength="5" class="vakil-form__input" autocomplete="off" name="vakil__parvane" pattern="[0-9]{5}">
+                <input placeholder="شماره کارت بانکی" type="text" id="vakil__cardNumber" required maxlength="16" class="vakil-form__input" autocomplete="off" name="vakil__card-number" pattern="[0-9]{11}">
             </form>
             <form action="" class="movakel-form" id="movakel-form">
 

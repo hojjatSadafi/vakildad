@@ -1,6 +1,11 @@
 let $ = document
 let get = function (id){return document.getElementById(id)}
 let getC = function (className){return document.querySelector('.'+className)}
+
+let localStorageTheme = localStorage.getItem('vakilDadTheme')
+if(localStorageTheme === "dark"){
+    document.documentElement.classList.add('dark')
+}
 // let images=[
 //     "images/judgeicons/1.png",
 //     "images/judgeicons/2.png",

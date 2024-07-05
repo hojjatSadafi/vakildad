@@ -11,16 +11,27 @@ html{
     margin: 0px;
     padding: 0px;
 }
-:root{
+:root {
     --primary-color: #1e88e5;
+    --secondery-color: #ff9800;
+    --text-color: #616161;
+    --bg-color: #fff;
+    --section-bg-color: #eeeeee;
+    --negative-bg-color: #1F2935;
+    --app-transition: all 180ms ease-in;
+    scroll-behavior: smooth;
+}
+html.dark{
+    --bg-color:#1F2935;
+    --negative-bg-color:#fff;
+    --text-color:#e0e0e0;
+    --section-bg-color: #161D26;
 }
 body {
     min-height: 100vh;
     font-size: 1.6rem;
-   
-}
-svg{
-    
+    background-color: var(--bg-color);
+    font-family: vazir;
 }
 .hidden{
     display: none;
@@ -36,6 +47,7 @@ svg{
     padding: 0px 1rem;
     box-shadow: 0 0 .4rem #bdbdbd;
     border-radius: 2rem;
+    background-color: var(--section-bg-color);
 }
 /* template left */
 .temlate-left {
@@ -126,15 +138,16 @@ svg{
     gap: 1rem;
     padding: 0rem 1rem;
     border-radius: .5rem;
-    background-color: #eeeeee;
+    background-color: var(--bg-color);
     width: max-content;
     margin: 0px auto;
+    margin-bottom: 3rem;
 }
 .template-right__select-rule{
     border-radius: .5rem;
     padding: 1rem ;
     font-family: vazir;
-    color: #616161;
+    color: var(--text-color);
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -160,6 +173,36 @@ svg{
     /* background-color: #bdbdbd;
     border:1px solid #1e88e5; */
     color: var(--primary-color);
+}
+
+/* vakil form */
+
+.vakil-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.vakil-form__input{
+    display: block;
+    text-align: right;
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+    padding:.5rem 1rem;
+    font-family: vazir;
+    color: var(--text-color);
+    border-radius: .7rem;
+    background-color: var(--bg-color);
+    border: 2px solid transparent;
+    border-bottom-color: var(--primary-color);
+    transition: all 180ms ease;
+}
+.vakil-form__input:hover{
+   border-right-color: var(--primary-color);
+}
+.vakil-form__input:focus{
+   border-color: var(--primary-color);
 }
 
 @media (max-width:992px) {
