@@ -185,7 +185,7 @@ body {
 }
 .vakil-form__span-for-input {
     position: relative;   
-    
+    min-width: 30%;
 }
 .vakil-form__span-for-input::after {
     position: absolute;
@@ -216,6 +216,8 @@ body {
     border-radius: .7rem;
     transition: all 180ms ease;
     border-right:5px solid transparent;
+    width: 100%;
+    background-color: var(--bg-color);
 }
 .vakil-form__input::placeholder {
     transition: all 180ms ease;
@@ -223,10 +225,35 @@ body {
 .vakil-form__input:focus::placeholder {
     color: var(--primary-color);
 }
-.vakil-form__input:focus {
+.vakil-form__input:focus , .vakil-form__text-area:focus {
     border-right-color:var(--primary-color);
 }
 
+.vakil-form__text-area {
+    border: none;
+    outline: none;
+    resize: none;
+    width: 100%;
+    text-align: right;
+    padding: .5rem;
+    font-family: vazir;
+    font-size: 1.4rem;
+    border-radius: .7rem;
+    border-right:5px solid transparent;
+    transition: all 180ms ease;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.vakil-form__skill-picker{
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 1rem 2rem;
+    color: #fff;
+    border-radius: .7rem;
+    cursor: pointer;
+    user-select: none;
+}
 
 @media (max-width:992px) {
     .template{
