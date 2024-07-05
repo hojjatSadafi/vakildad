@@ -48,14 +48,22 @@ let getC = function (className){return document.querySelector('.'+className)}
 
 //////////////
 
-const selectRuleWrapper = getC('template-right__select-rule-wrapper')
-const selectRuleBtns = $.querySelectorAll('.template-right__select-rule')
 
-selectRuleWrapper.addEventListener('click',function(event){
-    if(event.target.tagName === 'SPAN'){
-        selectRuleBtns.forEach(function(btn){
-            btn.classList.remove('template-right__select-rule--active')
-        })
-        event.target.classList.add('template-right__select-rule--active')
-    }
+const selectRuleBtns = $.querySelectorAll('.template-right__select-rule')
+const RuleBtnVakil = get('select-rule-vakil')
+const RuleBtnMovakel = get('select-rule-movakel')
+
+RuleBtnMovakel.addEventListener('click',function(){
+    clearRuleBtnActives()
+    this.classList.add('template-right__select-rule--active')
 })
+RuleBtnVakil.addEventListener('click',function(){
+    clearRuleBtnActives()
+    this.classList.add('template-right__select-rule--active')
+})
+
+function clearRuleBtnActives(){
+    selectRuleBtns.forEach(function(btn){
+        btn.classList.remove('template-right__select-rule--active')
+    })
+}
