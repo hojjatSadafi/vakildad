@@ -33,6 +33,11 @@ body {
     background-color: var(--bg-color);
     font-family: vazir;
 }
+/* component */
+.z-index-5{
+    z-index: 5;
+}
+
 .hidden{
     display: none;
 }
@@ -42,12 +47,12 @@ body {
     margin: 0px auto;
     max-width: 1100px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     margin-top: 2rem;
     padding: 0px 1rem;
-    box-shadow: 0 0 .4rem #bdbdbd;
+    /* box-shadow: 0 0 .4rem #bdbdbd; */
     border-radius: 2rem;
-    background-color: var(--section-bg-color);
+    background-color: transparent;
 }
 /* template left */
 .temlate-left {
@@ -60,7 +65,7 @@ body {
 }
 .temlate-left__img {
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     height: 100%;
     z-index: 0;
     margin: auto;
@@ -129,19 +134,22 @@ body {
 /* template right */
 .temlate-right {
     flex-basis: 50%;
-    height: 100%;
-    align-self: flex-start;
+    height: inherit;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .template-right__select-rule-wrapper{
     display: flex;
     gap: 1rem;
     padding: 0rem 1rem;
     border-radius: .5rem;
-    background-color: var(--bg-color);
+    background-color: var(--section-bg-color);
     width: max-content;
     margin: 0px auto;
     margin-bottom: 3rem;
+    align-self: baseline;
 }
 .template-right__select-rule{
     border-radius: .5rem;
@@ -217,7 +225,7 @@ body {
     transition: all 180ms ease;
     border-right:5px solid transparent;
     width: 100%;
-    background-color: var(--bg-color);
+    background-color: var(--section-bg-color);
 }
 .vakil-form__input::placeholder {
     transition: all 180ms ease;
@@ -254,6 +262,47 @@ body {
     cursor: pointer;
     user-select: none;
 }
+
+.vakil-form__submit-btn{
+    width: 50%;
+    margin: 0px auto;
+    border: none;
+    outline: none;
+    border: 2px solid var(--primary-color);
+    padding:.5rem 0px;
+    font-size: 1.8rem;
+    font-family: vaizr;
+    border-radius: .7rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    color: var(--text-color);
+    transition: all 180ms ease 50ms;
+}
+.vakil-form__submit-btn > span{
+}
+.vakil-form__submit-btn:hover{
+    color: #1e88e5;
+    width: 90%;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+}
+.vakil-form__submit-btn::after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: all 180ms ease;
+    width: 0%;
+    background-color: var(--section-bg-color);
+    z-index: -1;
+}
+.vakil-form__submit-btn:hover::after{
+    width: 100%;
+}
+
 
 @media (max-width:992px) {
     .template{
