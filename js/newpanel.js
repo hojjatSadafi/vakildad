@@ -94,4 +94,12 @@ uploadImageInput.addEventListener('input',function(event){
 ////skill picker
 
 const skillPickerBtn = get('pick-skill-btn')
-// let modal
+const modalBox = get('vakil-modal')
+const coverElem = get('cover')
+const x = getC('x')
+function toggleModal(){
+    modalBox.classList.toggle('vakil-form__modal--show')
+    coverElem.classList.toggle('cover--show')
+}
+skillPickerBtn.addEventListener('click',toggleModal)
+x.addEventListener('click',toggleModal)

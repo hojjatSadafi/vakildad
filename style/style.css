@@ -28,6 +28,7 @@
     --bg-color: #fff;
     --section-bg-color: #eeeeee;
     --negative-bg-color: #1F2935;
+    --zero-to-255:0;
     --app-transition: all 180ms ease-in;
     scroll-behavior: smooth;
 }
@@ -36,6 +37,7 @@ html.dark{
     --negative-bg-color:#fff;
     --text-color:#e0e0e0;
     --section-bg-color: #161D26;
+    --zero-to-255:255;
 }
 html {
     font-size: 62.5%;

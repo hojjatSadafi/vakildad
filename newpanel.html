@@ -17,6 +17,11 @@
         <symbol id="arrow-left-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M15 19.9201L8.47997 13.4001C7.70997 12.6301 7.70997 11.3701 8.47997 10.6001L15 4.08008" stroke="CurrentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         </symbol>
+        <symbol id="x-icon" class="icon icon-tabler icon-tabler-x" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+        </symbol>
     </svg>
     <div class="template">
         <div class="temlate-left">
@@ -64,7 +69,9 @@
 
             <div class="vakil-form__submit-btn" id="vakil-submit"><span class="z-index-5">ثبت</span></div>
 
-            <div class="vakil-form__modal" id="vakil-modal"></div>
+            <div class="vakil-form__modal" id="vakil-modal">
+                <svg class="x"><use href="#x-icon"></use></svg>
+            </div>
             </form>
             <!-- <form action="" class="movakel-form" id="movakel-form">
 
@@ -76,5 +83,6 @@
         </div>
         
     </div>
+    <div class="cover" id="cover"></div>
 </body>
 </html>

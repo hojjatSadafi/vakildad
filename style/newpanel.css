@@ -19,6 +19,7 @@ html{
     --section-bg-color: #eeeeee;
     --negative-bg-color: #1F2935;
     --app-transition: all 180ms ease-in;
+    --zero-to-255:0;
     scroll-behavior: smooth;
 }
 html.dark{
@@ -26,6 +27,7 @@ html.dark{
     --negative-bg-color:#fff;
     --text-color:#e0e0e0;
     --section-bg-color: #161D26;
+    --zero-to-255:255;
 }
 body {
     min-height: 100vh;
@@ -49,7 +51,7 @@ body {
     max-width: 1100px;
     display: flex;
     align-items: stretch;
-    margin-top: 2rem;
+    padding-top: 2rem;
     padding: 0px 1rem;
     /* box-shadow: 0 0 .4rem #bdbdbd; */
     border-radius: 2rem;
@@ -211,6 +213,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 .vakil-form__file-input {
     position: absolute;
@@ -343,17 +346,57 @@ body {
 }
 
 
-/* .vakil-form__modal{
+.vakil-form__modal{
     position: absolute;
     width: 70%;
     height: 80vh;
-    background-color: rgba(0, 0, 0, .5);
     inset: 0;
     margin: auto;
     border-radius: 1rem;
     backdrop-filter: blur(5px);
-} */
-
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 180ms ease;
+    transform: translateY(-1rem);
+    background-color: rgba(var(--zero-to-255), var(--zero-to-255), var(--zero-to-255), .1);
+    box-shadow: 0 0 1rem rgba(var(--zero-to-255), var(--zero-to-255), var(--zero-to-255), .5);
+}
+.vakil-form__modal.vakil-form__modal--show{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0rem);
+}
+.x{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--negative-bg-color);
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .3rem;
+}
+/*  */
+.cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 180ms ease;
+}
+.cover.cover--show{
+    opacity: 1;
+    visibility: visible;
+}
 @media (max-width:992px) {
     .template{
         width: 98%;
