@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style/reset.css">
     <link rel="stylesheet" href="style/newpanel.css">
     <script src="js/newpanel.js" defer></script>
+    <script src="js/stateAndCityLoader.js" defer></script>
 </head>
-<body>
+<body onload="cityAndStateGenerator(get('vakil__state'),get('vakil__city'));"> 
     <svg class="hidden">
         <symbol id="arrow-right-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M8.91003 19.9201L15.43 13.4001C16.2 12.6301 16.2 11.3701 15.43 10.6001L8.91003 4.08008" stroke="CurrentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -41,7 +42,7 @@
             </div>
             <form action="" class="vakil-form" id="vakil-form">
 
-                    
+                    <img class="vakil-form__profile-img" src="images/defaultProfile.png" title="تصویر پروفایل را انتخواب کنید"></img>
 
                     <span class="vakil-form__span-for-input"><input placeholder="نام و نام خانوادگی" type="text" id="vakil__name-family" name="vakil__name-family" class="vakil-form__input" required minlength="5"></span>
                     <span class="vakil-form__span-for-input"><input placeholder="شماره تماس" title="شماره تلفن خودتان را وارد کنید" type="text" id="vakil__phone" required maxlength="11" class="vakil-form__input" autocomplete="off" name="vakil__phone" pattern="[0-9]{11}"></span>

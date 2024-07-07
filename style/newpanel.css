@@ -186,10 +186,22 @@ body {
 /* vakil form */
 
 .vakil-form{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    padding: 0px 2rem;
+    direction: rtl;
+}
+.vakil-form__profile-img{
+    width: 5rem;
+    height: 5rem;
+    grid-column: span 2;
+    margin: 0px auto;
+    border-radius: 50%;
+    cursor: pointer;
 }
 .vakil-form__span-for-input {
     position: relative;   
@@ -237,7 +249,7 @@ body {
     border-right-color:var(--primary-color);
 }
 
-.vakil-form__text-area {
+/* .vakil-form__text-area {
     border: none;
     outline: none;
     resize: none;
@@ -251,7 +263,7 @@ body {
     transition: all 180ms ease;
     background-color: var(--bg-color);
     color: var(--text-color);
-}
+} */
 
 .vakil-form__skill-picker{
     background-color: var(--primary-color);
@@ -279,6 +291,7 @@ body {
     text-align: center;
     color: var(--text-color);
     transition: all 180ms ease 50ms;
+    grid-column: span 2;
 }
 .vakil-form__submit-btn > span{
 }
@@ -314,5 +327,16 @@ body {
     }
     .temlate-right{
         flex-basis: 100%;
+    }
+}
+@media (max-width:400px) {
+    .vakil-form{
+        grid-template-columns: 1fr;
+    }
+    .vakil-form__span-for-input{
+        width: 100%;
+    }
+    .vakil-form__profile-img , .vakil-form__submit-btn{
+        grid-column: auto;
     }
 }

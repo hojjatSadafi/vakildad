@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="style/responsive.css">
 
     <script src="js/app.js" defer></script>
+    <script src="js/stateAndCityLoader.js" defer></script>
 </head>
-<body>
+<body onload="cityAndStateGenerator(get('state-select'),get('city-select'));">
     <header class="header">
         <div class="container">
             <div class="header__mobile-wrapper"> 
