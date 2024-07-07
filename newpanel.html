@@ -41,8 +41,10 @@
                 <span class="template-right__select-rule" id="select-rule-movakel">موکل</span>
             </div>
             <form action="" class="vakil-form" id="vakil-form">
-
-                    <img class="vakil-form__profile-img" src="images/defaultProfile.png" title="تصویر پروفایل را انتخواب کنید"></img>
+                    <div class="vakil-form__image-wrapper">
+                        <img class="vakil-form__profile-img" src="images/defaultProfile.png" title="تصویر پروفایل را انتخواب کنید"></img>
+                        <input type="file" name="vakil-image" id="vakil-image" class="vakil-form__file-input">
+                    </div>
 
                     <span class="vakil-form__span-for-input"><input placeholder="نام و نام خانوادگی" type="text" id="vakil__name-family" name="vakil__name-family" class="vakil-form__input" required minlength="5"></span>
                     <span class="vakil-form__span-for-input"><input placeholder="شماره تماس" title="شماره تلفن خودتان را وارد کنید" type="text" id="vakil__phone" required maxlength="11" class="vakil-form__input" autocomplete="off" name="vakil__phone" pattern="[0-9]{11}"></span>
@@ -52,21 +54,25 @@
                     
                     <span class="vakil-form__span-for-input"><select id="vakil__state" required class="vakil-form__input" name="vakil__state" ></select></span>
                     <span class="vakil-form__span-for-input"><select id="vakil__city" required class="vakil-form__input" name="vakil__city" ></select></span>
-              
-<!--             
+                    
+                    <div class="vakil-form__skill-picker" id="pick-skill-btn">انتخاب تخصص</div>
+                <!--             
                 <textarea class="vakil-form__text-area" name="vakil-about" id="vakil-about" rows="4" placeholder="توضیحات و تخصصات شما" maxlength="220"></textarea>
                 <textarea class="vakil-form__text-area" name="vakil-resume" id="vakil-resume" rows="4" placeholder="رزومه کاری شما" maxlength="220"></textarea> -->
             
                 <!-- <div class="vakil-form__skill-picker" id="skill-picker">انتخاب تخصص</div> -->
 
             <div class="vakil-form__submit-btn" id="vakil-submit"><span class="z-index-5">ثبت</span></div>
-            <!-- </form>
-            <form action="" class="movakel-form" id="movakel-form">
+
+            <div class="vakil-form__modal" id="vakil-modal"></div>
+            </form>
+            <!-- <form action="" class="movakel-form" id="movakel-form">
 
             </form>
             <form action="" class="login-form" id="login-form">
 
             </form> -->
+            
         </div>
         
     </div>

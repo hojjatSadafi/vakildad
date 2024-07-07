@@ -32,6 +32,7 @@ body {
     font-size: 1.6rem;
     background-color: var(--bg-color);
     font-family: vazir;
+    position: relative;
 }
 /* component */
 .z-index-5{
@@ -195,12 +196,29 @@ body {
     padding: 0px 2rem;
     direction: rtl;
 }
-.vakil-form__profile-img{
+.vakil-form__image-wrapper {
+    position: relative;
     width: 5rem;
     height: 5rem;
     grid-column: span 2;
     margin: 0px auto;
     border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid var(--section-bg-color);
+    overflow: hidden;
+}
+.vakil-form__profile-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.vakil-form__file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
     cursor: pointer;
 }
 .vakil-form__span-for-input {
@@ -273,6 +291,16 @@ body {
     border-radius: .7rem;
     cursor: pointer;
     user-select: none;
+    margin: 0px auto;
+    grid-column: span 2;
+    border: 2px solid transparent;
+    transition: all 180ms ease-in;
+}
+.vakil-form__skill-picker:hover{
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: scale(.9);
 }
 
 .vakil-form__submit-btn{
@@ -293,11 +321,9 @@ body {
     transition: all 180ms ease 50ms;
     grid-column: span 2;
 }
-.vakil-form__submit-btn > span{
-}
 .vakil-form__submit-btn:hover{
     color: #1e88e5;
-    width: 90%;
+    width: 60%;
     padding-top: .4rem;
     padding-bottom: .4rem;
 }
@@ -316,6 +342,17 @@ body {
     width: 100%;
 }
 
+
+/* .vakil-form__modal{
+    position: absolute;
+    width: 70%;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, .5);
+    inset: 0;
+    margin: auto;
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+} */
 
 @media (max-width:992px) {
     .template{

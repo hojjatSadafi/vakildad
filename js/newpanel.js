@@ -2,6 +2,7 @@ let $ = document
 let get = function (id){return document.getElementById(id)}
 let getC = function (className){return document.querySelector('.'+className)}
 
+///theme handler 
 let localStorageTheme = localStorage.getItem('vakilDadTheme')
 if(localStorageTheme === "dark"){
     document.documentElement.classList.add('dark')
@@ -51,7 +52,7 @@ if(localStorageTheme === "dark"){
 //     nextImage()
 // },7000)
 
-//////////////
+////////////// select rule tiggler
 
 
 const selectRuleBtns = $.querySelectorAll('.template-right__select-rule')
@@ -72,3 +73,25 @@ function clearRuleBtnActives(){
         btn.classList.remove('template-right__select-rule--active')
     })
 }
+
+
+///// upload image
+
+const vakilProfileImageElem = $.querySelector('.vakil-form__profile-img')
+const uploadImageInput = $.getElementById('vakil-image')
+uploadImageInput.addEventListener('input',function(event){
+
+
+    let file = uploadImageInput.files[0];
+    let reader = new FileReader();
+
+    reader.onload = function(e) {
+        vakilProfileImageElem.setAttribute('src',e.target.result)
+    }
+    reader.readAsDataURL(file);
+    })
+
+////skill picker
+
+const skillPickerBtn = get('pick-skill-btn')
+// let modal
