@@ -91,15 +91,81 @@ uploadImageInput.addEventListener('input',function(event){
     reader.readAsDataURL(file);
     })
 
-////skill picker
+//step by step
+currentTab = 0
 
-const skillPickerBtn = get('pick-skill-btn')
-const modalBox = get('vakil-modal')
-const coverElem = get('cover')
-const x = getC('x')
-function toggleModal(){
-    modalBox.classList.toggle('vakil-form__modal--show')
-    coverElem.classList.toggle('cover--show')
+const vakilForm = get('vakil-form')
+const stepParent = getC('vakil-form__step-wrapper')
+const tabsArray = $.querySelectorAll('.tab')
+const vakilFormSubmitBtn = get('vakil-submit')
+const vakilFormPervBtn = get('vakil-perv')
+
+function generateSteps (){
+    let stepFragment = $.createDocumentFragment()
+    for(i=0;i<tabsArray.length;i++){
+        let newStepElem = $.createElement('span')
+        newStepElem.classList.add('step')
+
+        stepFragment.appendChild(newStepElem)
+    }
+    stepParent.append(stepFragment)
 }
-skillPickerBtn.addEventListener('click',toggleModal)
-x.addEventListener('click',toggleModal)
+
+function showTab(tabIndex){
+    tabsArray[tabIndex].classList.add('tab--show')
+    if(tabIndex == 0){
+        vakilFormPervBtn.style.display = 'none'
+    } else {
+        vakilFormPervBtn.style.display = 'block'
+    }
+    if(tabIndex == (tabsArray.length -1)){
+        vakilFormSubmitBtn.innerHTML = 'ثبت'
+    } else {
+        vakilFormSubmitBtn.innerHTML = 'بعدی'
+    }
+}
+
+function nextPerv(nextOrPerv){
+
+    if(nextOrPerv == 1 && !isFormValid()){
+        return false
+    }
+
+    tabsArray[currentTab].classList.remove('tab--show')
+
+    currentTab = currentTab + nextOrPerv
+
+    if(currentTab >= tabsArray.length){
+        vakilForm.submit()
+        return false
+    }
+
+    showTab(currentTab)
+}
+
+function isFormValid(){
+    isValid = true
+    let tabInputs = (tabsArray[currentTab].getElementsByTagName('input'))
+    for(i=0;i<tabInputs.length;i++){
+        if(tabInputs[i].value == ""){
+            isValid = false
+            console.log('invalid');
+        }    
+    }
+
+    if(isValid){
+        const steps = $.querySelectorAll('.step')
+        console.log(steps);
+        steps[currentTab].classList.add('step--pased')
+    }
+
+    return isValid
+}
+generateSteps()
+showTab(currentTab)
+vakilFormSubmitBtn.addEventListener('click',function(){
+    nextPerv(1)
+})
+vakilFormPervBtn.addEventListener('click',function(){
+    nextPerv(-1)
+})
