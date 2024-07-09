@@ -91,6 +91,16 @@ uploadImageInput.addEventListener('input',function(event){
     reader.readAsDataURL(file);
     })
 
+//parvane year generator
+const vakilParvaneYearSelect = get('vakil__parvaneYear')
+let yearHolderFragment = $.createDocumentFragment()
+for(let i=1320;i<=1403;i++){
+    let newYearOption = $.createElement('option')
+    newYearOption.value = i
+    newYearOption.innerHTML = i
+    yearHolderFragment.append(newYearOption)
+}
+vakilParvaneYearSelect.append(yearHolderFragment)
 //step by step
 currentTab = 0
 
@@ -113,6 +123,11 @@ function generateSteps (){
 
 function showTab(tabIndex){
     tabsArray[tabIndex].classList.add('tab--show')
+    if(tabsArray[tabIndex+1])
+        tabsArray[tabIndex+1].classList.remove('tab--out')
+    if(tabsArray[tabIndex-1])
+    tabsArray[tabIndex-1].classList.remove('tab--out')
+
     if(tabIndex == 0){
         vakilFormPervBtn.style.display = 'none'
     } else {
@@ -132,6 +147,7 @@ function nextPerv(nextOrPerv){
     }
 
     tabsArray[currentTab].classList.remove('tab--show')
+    tabsArray[currentTab].classList.add('tab--out')
 
     currentTab = currentTab + nextOrPerv
 

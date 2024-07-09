@@ -50,18 +50,31 @@
                         <img class="vakil-form__profile-img" src="images/defaultProfile.png" title="تصویر پروفایل را انتخواب کنید"></img>
                         <input type="file" name="vakil-image" id="vakil-image" class="vakil-form__file-input">
                     </div>
+               <div class="tab-wrapper">
                 <div class="tab">
+                    <h2 class="tab__header">مشخصات فردی</h2>
                     <span class="vakil-form__span-for-input"><input placeholder="نام و نام خانوادگی" type="text" id="vakil__name-family" name="vakil__name-family" class="vakil-form__input" required minlength="5" autocomplete="off"></span>
                     <span class="vakil-form__span-for-input"><input placeholder="شماره تماس" title="شماره تلفن خودتان را وارد کنید" type="text" id="vakil__phone" required maxlength="11" class="vakil-form__input" autocomplete="off" name="vakil__phone" pattern="[0-9]{11}"></span>
+                    <span class="vakil-form__span-for-input"><input placeholder="ایمیل" title="ایمیل خودتان را وارد کنید" type="email" id="vakil__email" required  class="vakil-form__input" autocomplete="off" name="vakil__email"></span>
                 </div>
                 <div class="tab">
+                    <h2 class="tab__header">اطلاعات وکالتی</h2>
                     <span class="vakil-form__span-for-input"><input placeholder="شماره پروانه وکالت" type="text" id="vakil__parvaneNumber" required maxlength="5" class="vakil-form__input" autocomplete="off" name="vakil__parvane" pattern="[0-9]{5}"></span>
-                    <span class="vakil-form__span-for-input"><input placeholder="شماره کارت بانکی" type="text" id="vakil__cardNumber" required maxlength="16" class="vakil-form__input" autocomplete="off" name="vakil__card-number" pattern="[0-9]{11}"></span>
+                    <span class="vakil-form__span-for-input"><select id="vakil__parvaneYear" required class="vakil-form__input" name="vakil__parvaneYear" ></select></span>
+                    
+                    <!-- <span class="vakil-form__span-for-input"><input placeholder="شماره کارت بانکی" type="text" id="vakil__cardNumber" required maxlength="16" class="vakil-form__input" autocomplete="off" name="vakil__card-number" pattern="[0-9]{11}"></span> -->
                 </div>
-                    <div class="tab">
+                <div class="tab">
+                        <h2 class="tab__header">انتخاب شهر و استان</h2>
                         <span class="vakil-form__span-for-input"><select id="vakil__state" required class="vakil-form__input" name="vakil__state" ></select></span>
                         <span class="vakil-form__span-for-input"><select id="vakil__city" required class="vakil-form__input" name="vakil__city" ></select></span>
-                    </div>
+                </div>
+                <div class="tab">
+                        <h2 class="tab__header">انتخاب شهر و استان</h2>
+                        <span class="vakil-form__span-for-input"><select id="vakil__state" required class="vakil-form__input" name="vakil__state" ></select></span>
+                        <span class="vakil-form__span-for-input"><select id="vakil__city" required class="vakil-form__input" name="vakil__city" ></select></span>
+                </div>
+               </div>
                     
                     <!-- <div class="vakil-form__skill-picker" id="pick-skill-btn">انتخاب تخصص</div> -->
                 <!--             

@@ -200,6 +200,7 @@ body {
     gap: 1rem;
     padding: 0px 2rem;
     direction: rtl;
+    overflow: hidden;
 }
 .vakil-form__image-wrapper {
     position: relative;
@@ -391,12 +392,32 @@ input:internal-autofill-selected{
     direction: ltr;
 }
         /* step by step styles */
+.tab-wrapper{
+    height: 18rem;
+    position: relative;
+}
 .tab{
-    display: none;
     transition: all 180ms ease-in;
+    position: relative;
+    opacity: 0;
+    position: absolute;
+    right: -100%;
+    width: 100%;
 }
 .tab--show{
-    display: block;
+    right: 0;
+    opacity: 1;
+}
+.tab--out{
+    opacity: 0;
+    right: 100%;
+}
+.tab__header{
+    position: absolute;
+    right: 0;
+    top: -5.5rem;
+    font-size: 2.5rem;
+    color: var(--text-color);
 }
 .step{
     display: block;
