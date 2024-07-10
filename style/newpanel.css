@@ -231,6 +231,7 @@ body {
 .vakil-form__span-for-input {
     position: relative;   
     min-width: 30%;
+    /* height: min-content; */
 }
 .vakil-form__span-for-input::after {
     position: absolute;
@@ -263,9 +264,10 @@ body {
     border-right:5px solid transparent;
     width: 100%;
     background-color: var(--section-bg-color) !important;
+    
 }
 .vakil-form__input:first-child{
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
 }
 .vakil-form__input::placeholder {
     transition: all 180ms ease;
@@ -276,8 +278,8 @@ body {
 .vakil-form__input:focus , .vakil-form__text-area:focus {
     border-right-color:var(--primary-color);
 }
-input:internal-autofill-selected{
-    background-color: var(--section-bg-color);
+.vakil-form__label{
+    color: var(--text-color);
 }
 /* .vakil-form__text-area {
     border: none;
@@ -403,6 +405,9 @@ input:internal-autofill-selected{
     position: absolute;
     right: -100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 .tab--show{
     right: 0;
