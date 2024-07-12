@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="style/newpanel.css">
     <script src="js/newpanel.js" defer></script>
     <script src="js/stateAndCityLoader.js" defer></script>
+    <script src="js/skillPickLoader.js" defer></script>
 </head>
-<body onload="cityAndStateGenerator(get('vakil__state'),get('vakil__city'));"> 
+<body> 
     <svg class="hidden">
         <symbol id="arrow-right-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M8.91003 19.9201L15.43 13.4001C16.2 12.6301 16.2 11.3701 15.43 10.6001L8.91003 4.08008" stroke="CurrentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -57,9 +58,15 @@
                     <span class="vakil-form__span-for-input"><input placeholder="شماره تماس" title="شماره تلفن خودتان را وارد کنید" type="text" id="vakil__phone" required maxlength="11" class="vakil-form__input" autocomplete="off" name="vakil__phone" pattern="[0-9]{11}"></span>
                     <span class="vakil-form__span-for-input"><input placeholder="ایمیل" title="ایمیل خودتان را وارد کنید" type="email" id="vakil__email" required  class="vakil-form__input" autocomplete="off" name="vakil__email"></span>
                     <div class="vakil-form__radio-wrapper">
-                        
-                        <input type="radio" id="sex-radio" value="men" name="vakil-sex">
-                        <input type="radio" id="sex-radio" value="women" name="vakil-sex">
+                        <h3 class="vakil-form__gender-title">جنسیت:</h3>
+                        <span>
+                            <input class="vakil-form__radio" type="radio" id="vakil-men-radio" value="men" name="vakil-gender" checked>
+                            <label for="vakil-men-radio" class="vakil-form__radio-label">مرد</label>
+                        </span>
+                        <span>
+                            <input class="vakil-form__radio" type="radio" id="vakil-women-radio" value="women" name="vakil-gender">
+                            <label for="vakil-women-radio" class="vakil-form__radio-label">زن</label>
+                        </span>
                     </div>
                 </div>
                 <div class="tab">
@@ -67,18 +74,39 @@
                     <span class="vakil-form__span-for-input"><input placeholder="شماره پروانه وکالت" type="text" id="vakil__parvaneNumber" required maxlength="5" class="vakil-form__input" autocomplete="off" name="vakil__parvane" pattern="[0-9]{5}"></span>
                     <!-- <label for="vakil__parvaneYearss" class="vakil-form__label">سال اخذ پروانه</label> -->
                     <span class="vakil-form__span-for-input"><select placeholder="سال اخذ پروانه" id="vakil__parvaneYear" required class="vakil-form__input" name="vakil__parvaneYear"><option value="optionParvaneOPtion">سال اخذ پروانه</option></select></span>
+                    <span class="vakil-form__span-for-input"><input placeholder="شماره کارت بانکی" type="text" id="vakil__cardNumber" required maxlength="16" class="vakil-form__input" autocomplete="off" name="vakil__card-number" pattern="[0-9]{16}"></span>
                     
                     <!-- <span class="vakil-form__span-for-input"><input placeholder="شماره کارت بانکی" type="text" id="vakil__cardNumber" required maxlength="16" class="vakil-form__input" autocomplete="off" name="vakil__card-number" pattern="[0-9]{11}"></span> -->
                 </div>
                 <div class="tab">
                         <h2 class="tab__header">انتخاب شهر و استان</h2>
-                        <span class="vakil-form__span-for-input"><select id="vakil__state" required class="vakil-form__input" name="vakil__state" ></select></span>
-                        <span class="vakil-form__span-for-input"><select id="vakil__city" required class="vakil-form__input" name="vakil__city" ></select></span>
-                </div>
-                <div class="tab">
-                        <h2 class="tab__header">انتخاب شهر و استان</h2>
-                        <span class="vakil-form__span-for-input"><select id="vakil__state" required class="vakil-form__input" name="vakil__state" ></select></span>
-                        <span class="vakil-form__span-for-input"><select id="vakil__city" required class="vakil-form__input" name="vakil__city" ></select></span>
+                        <span class="vakil-form__span-for-input"><select id="vakil__state" required class="vakil-form__input state-select" name="vakil__state" ></select></span>
+                        <span class="vakil-form__span-for-input"><select id="vakil__city" required class="vakil-form__input city-select" name="vakil__city" ></select></span>
+                        <textarea class="vakil-form__text-area" name="vakil-about" id="vakil-about" rows="3" placeholder="توضیحات راجب خودتان" maxlength="300"></textarea>
+                    </div>
+                    <div class="tab">
+                        <h2 class="tab__header">اطلاعات شخصی</h2>
+                        <span class="vakil-form__span-for-input"><input placeholder="شماره تلفن ثابت" title="شماره تلفن ثابت خودتان را وارد کنید" type="text" id="vakil__landline-number" required maxlength="11" class="vakil-form__input" autocomplete="off" name="vakil__landline-number"></span>
+                        <textarea class="vakil-form__text-area" name="vakil-address" id="vakil-address" rows="5" placeholder="آدرس" maxlength="300"></textarea>
+                    </div>
+                    <div class="tab">
+                        <h2 class="tab__header">انتخاب تخصص</h2>
+                        <span class="vakil-form__span-for-input"><select id="vakil__skill" required class="vakil-form__input skill-select" name="vakil__skill"></select></span>
+                        <ul class="skill-list">
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                            <li class="skill-list__item">ملکی</li>
+                        </ul>
                 </div>
                </div>
                     

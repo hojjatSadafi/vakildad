@@ -35,6 +35,7 @@ body {
     background-color: var(--bg-color);
     font-family: vazir;
     position: relative;
+    padding-top: 2rem;
 }
 /* component */
 .z-index-5{
@@ -281,7 +282,44 @@ body {
 .vakil-form__label{
     color: var(--text-color);
 }
-/* .vakil-form__text-area {
+
+.vakil-form__radio-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.vakil-form__gender-title {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    bottom: 0;
+    margin: auto 0px;
+    height: max-content;
+    color: var(--text-color);
+}
+.vakil-form__radio-wrapper span{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vakil-form__radio-label {
+    color: var(--text-color);
+    background-color: var(--section-bg-color);
+    padding:1rem 1.5rem;
+    border-radius: .7rem;
+    cursor: pointer;
+    transition: all 180ms ease-in;
+    border: 2px solid transparent;
+}
+.vakil-form__radio {
+    width: 0%;
+}
+.vakil-form__radio:checked ~ .vakil-form__radio-label{
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+.vakil-form__text-area {
     border: none;
     outline: none;
     resize: none;
@@ -293,9 +331,12 @@ body {
     border-radius: .7rem;
     border-right:5px solid transparent;
     transition: all 180ms ease;
-    background-color: var(--bg-color);
+    background-color: var(--section-bg-color);
     color: var(--text-color);
-} */
+}
+.vakil-form__text-area::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+}
 
 /* .vakil-form__skill-picker{
     background-color: var(--primary-color);
@@ -310,12 +351,12 @@ body {
     border: 2px solid transparent;
     transition: all 180ms ease-in;
 } */
-.vakil-form__skill-picker:hover{
+/* .vakil-form__skill-picker:hover{
     background-color: transparent;
     color: var(--primary-color);
     border-color: var(--primary-color);
-    transform: scale(.9);
-}
+    transform: scale(.9); 
+}*/
 .vakil-form__btn-wrapper{
     display: flex;
     justify-content: space-between;
@@ -393,9 +434,59 @@ body {
     margin-top: 4rem;
     direction: ltr;
 }
+
+/* skill list */
+.skill-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(5rem,1fr));
+    gap: 1rem;
+    justify-content: center;
+    
+}
+.skill-list__item{
+    padding: .5rem 1rem;
+    color: var(--primary-color);
+    outline: 1px solid var(--primary-color);
+    border-radius: .7rem;
+    width: max-content;
+    cursor: pointer;
+    transition: all 100ms ease-in;
+    position: relative;
+    margin: 0px auto;
+}
+.skill-list__item:hover{
+    text-shadow: 0 0 .5rem var(--primary-color);
+    color: transparent;
+}
+.skill-list__item::after,.skill-list__item::before{
+    position: absolute;
+    content: '';
+    width: .3rem;
+    height: 1.7rem;
+    background-color: var(--text-color);
+    inset: 0;
+    margin: auto;
+    border-radius: 10rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms ease-in;
+    top: -50%;
+}
+.skill-list__item::after{
+    transform: rotate(45deg);
+}
+.skill-list__item::before{
+    transform: rotate(-45deg);
+
+}
+.skill-list__item:hover::after,.skill-list__item:hover::before{
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+}
         /* step by step styles */
 .tab-wrapper{
-    height: 18rem;
+    height: 20rem;
     position: relative;
 }
 .tab{
@@ -410,7 +501,7 @@ body {
     gap: 2rem;
 }
 .tab--show{
-    right: 0;
+    right: 0 !important;
     opacity: 1;
 }
 .tab--out{
@@ -437,9 +528,17 @@ body {
 }
 @media (max-width:992px) {
     .template{
-        width: 98%;
+        width: 100%;
         padding: 1rem;
     }
+    .temlate-left{
+        flex-basis: 40%;
+    }
+    .temlate-right{
+        flex-basis: 60%;
+    }
+}
+@media (max-width:768px) {
     .temlate-left{
         display: none;
     }
@@ -450,5 +549,11 @@ body {
 @media (max-width:400px) {
     .vakil-form__span-for-input{
         width: 100%;
+    }
+    .vakil-form__radio-wrapper{
+        justify-content: left;
+    }
+    .tab__header{
+        font-size: 2.2rem;
     }
 }
