@@ -437,10 +437,10 @@ body {
 
 /* skill list */
 .skill-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(5rem,1fr));
-    gap: 1rem;
-    justify-content: center;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 1rem;
+    /* justify-content: center; */
     
 }
 .skill-list__item{
@@ -452,7 +452,7 @@ body {
     cursor: pointer;
     transition: all 100ms ease-in;
     position: relative;
-    margin: 0px auto;
+    /* margin: 0px auto; */
 }
 .skill-list__item:hover{
     text-shadow: 0 0 .5rem var(--primary-color);

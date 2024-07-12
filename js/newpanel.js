@@ -189,3 +189,20 @@ vakilFormPervBtn.addEventListener('click',function(){
 
 //// skill pick change
 
+const skillListElem = getC('skill-list')
+const skillSelectBox = get('vakil__skill')
+let selectedSkillArr = []
+
+skillSelectBox.addEventListener('input',function(){
+    let newLiElem = $.createElement('li')
+    newLiElem.classList.add('skill-list__item')
+    newLiElem.innerHTML = this.value
+
+    if(selectedSkillArr.includes(this.value)){
+
+    } else {
+        selectedSkillArr.push(this.value)
+        skillListElem.append(newLiElem)
+    }
+
+})
