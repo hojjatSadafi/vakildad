@@ -75,9 +75,9 @@ function serviceGenerator(){
         <form class="services__content" action="" method="post">
         <textarea name="question-area" id="question-area" cols="30" rows="10" placeholder="سوال خود را بنویسید..." class="services__text-area" maxlength="1400" minlength="100"></textarea>
         <div class="services__select-wrapper">
-            <select name="state" id="state-select" class="services__select-box">
+            <select name="state" id="state-select" class="services__select-box state-select">
             </select>
-            <select name="city" id="city-select" class="services__select-box">
+            <select name="city" id="city-select" class="services__select-box city-select">
             </select>
         </div>
         <div class="services__form-submit-btn" id="service1-submit-btn">ارسال</div>
@@ -100,10 +100,10 @@ function serviceGenerator(){
         insertServiceBox.innerHTML = ''
         insertServiceBox.insertAdjacentHTML('beforeend',`
         <form action="" class="find-form">
-            <select name="state" id="state-select" class="find-form__select">
+            <select name="state" id="state-select" class="find-form__select state-select">
                 
             </select>
-            <select name="city" id="city-select" class="find-form__select">
+            <select name="city" id="city-select" class="find-form__select city-select">
                 
             </select>
             <select name="skill" id="skill-select" class="find-form__select">

@@ -5,14 +5,10 @@
 
 // How to Use :
 // 
-// 1.Add onLoad Event on body (inline)
-// 2.Write cityAndStateGenerator func on the load event
-// 3.choose your select box with ID in the function params
+// 1. set 'state-select','state-select' class name for each of city and state select box 
+// 2. link it to your html
 // 
-// example:
 // 
-//<body onload="cityAndStateGenerator(get('stateSelectElem'),get('citySelectElem'));"> 
-//...
 
 let dataArr = [
     ['اذربایجان شرقی',['تبریز','آذرشهر','اسکو','اهر','ایلخچی','بستان آباد','بناب','ترکمانچای','تسوج','جلفا','چاراویماق','خاروانا','خداآفرین','خسروشاه','خواجه','سراب','شبستر','صوفیان','عجبشیر','کلیبر','گوگان','لیلان','مراغه','مرند','ملکان','ممقان','مهربان','میانه','ورزقان','هریس','هشترود','هوراند','یامچی','هادی شهر','خسروشهر','انزاب']],
@@ -91,6 +87,14 @@ let dataArr = [
     
 ]
 
+const stateArray = document.querySelectorAll('.state-select')
+const cityArray = document.querySelectorAll('.city-select')
+let i=0
+
+stateArray.forEach(function(stateItem){
+    cityAndStateGenerator(stateItem,cityArray[i])
+    i++
+})
 
 function cityAndStateGenerator(stateSelectBox,citySelectBox){
     let statesFragment = $.createDocumentFragment() 
