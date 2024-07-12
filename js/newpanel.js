@@ -52,7 +52,7 @@ if(localStorageTheme === "dark"){
 //     nextImage()
 // },7000)
 
-////////////// select rule tiggler
+////////////// select rule toggler
 
 
 const selectRuleBtns = $.querySelectorAll('.template-right__select-rule')
@@ -102,7 +102,7 @@ for(let i=1320;i<=1403;i++){
 }
 vakilParvaneYearSelect.append(yearHolderFragment)
 //step by step
-currentTab = 0
+currentTab = 4
 
 const vakilForm = get('vakil-form')
 const stepParent = getC('vakil-form__step-wrapper')
@@ -123,10 +123,7 @@ function generateSteps (){
 
 function showTab(tabIndex){
     tabsArray[tabIndex].classList.add('tab--show')
-    if(tabsArray[tabIndex+1])
-        tabsArray[tabIndex+1].classList.remove('tab--out')
-    if(tabsArray[tabIndex-1])
-    tabsArray[tabIndex-1].classList.remove('tab--out')
+   
 
     if(tabIndex == 0){
         vakilFormPervBtn.style.display = 'none'
@@ -147,7 +144,12 @@ function nextPerv(nextOrPerv){
     }
 
     tabsArray[currentTab].classList.remove('tab--show')
-    tabsArray[currentTab].classList.add('tab--out')
+    if(nextOrPerv === 1){
+        tabsArray[currentTab].style.right = '100%'
+    } else if(nextOrPerv === -1) {
+        tabsArray[currentTab].style.right = '-100%'
+    }
+    // tabsArray[currentTab].classList.add('tab--out')
 
     currentTab = currentTab + nextOrPerv
 
@@ -171,7 +173,6 @@ function isFormValid(){
 
     if(isValid){
         const steps = $.querySelectorAll('.step')
-        console.log(steps);
         steps[currentTab].classList.add('step--pased')
     }
 
@@ -185,3 +186,6 @@ vakilFormSubmitBtn.addEventListener('click',function(){
 vakilFormPervBtn.addEventListener('click',function(){
     nextPerv(-1)
 })
+
+//// skill pick change
+
