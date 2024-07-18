@@ -41,7 +41,15 @@ body {
 .z-index-5{
     z-index: 5;
 }
-
+select::-webkit-scrollbar{
+    width: 8px;
+    background-color: transparent;
+}
+select::-webkit-scrollbar-thumb{
+     
+    background-color: var(--primary-color);
+    border-radius: 5rem;
+}
 
 .hidden{
     display: none;
@@ -441,7 +449,18 @@ body {
      flex-wrap: wrap;
      gap: 1rem;
     /* justify-content: center; */
-    
+    overflow-y: auto;
+    padding: .5rem;
+    max-height: 14rem;
+}
+.skill-list::-webkit-scrollbar{
+    width: 4px;
+    background-color: var(--section-bg-color);
+    border-radius: 2rem;
+}
+.skill-list::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+    border-radius: 2rem;
 }
 .skill-list__item{
     padding: .5rem 1rem;
@@ -453,6 +472,7 @@ body {
     transition: all 100ms ease-in;
     position: relative;
     /* margin: 0px auto; */
+    user-select: none;
 }
 .skill-list__item:hover{
     text-shadow: 0 0 .5rem var(--primary-color);

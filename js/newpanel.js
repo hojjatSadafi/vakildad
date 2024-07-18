@@ -102,7 +102,7 @@ for(let i=1320;i<=1403;i++){
 }
 vakilParvaneYearSelect.append(yearHolderFragment)
 //step by step
-currentTab = 4
+currentTab = 0
 
 const vakilForm = get('vakil-form')
 const stepParent = getC('vakil-form__step-wrapper')
@@ -197,6 +197,7 @@ skillSelectBox.addEventListener('input',function(){
     let newLiElem = $.createElement('li')
     newLiElem.classList.add('skill-list__item')
     newLiElem.innerHTML = this.value
+    newLiElem.dataset.skill = this.value
 
     if(selectedSkillArr.includes(this.value)){
 
@@ -204,5 +205,25 @@ skillSelectBox.addEventListener('input',function(){
         selectedSkillArr.push(this.value)
         skillListElem.append(newLiElem)
     }
-
+    removeSkillListinerSeter()
 })
+
+//remove skill
+
+function removeSkillListinerSeter(){
+    skillsinDOM = $.querySelectorAll('.skill-list__item')
+
+    skillsinDOM.forEach(function(skillinDOM){
+        skillinDOM.addEventListener('click',function(event){
+            removeSkill(event.target)
+        })
+    })
+}
+
+function removeSkill(skillInDOM){
+    let selectedSkill = skillInDOM.dataset.skill
+    
+    let removeSkillIndex = selectedSkillArr.indexOf(selectedSkill)
+    selectedSkillArr.splice(removeSkillIndex,'1')
+    skillInDOM.remove()
+}
