@@ -42,11 +42,12 @@
             </div> -->
         </div>
         <div class="temlate-right">
-            <form action="" class="vakil-form" id="vakil-form">
-                <div class="template-right__select-rule-wrapper">
-                    <span class="template-right__select-rule " id="select-rule-vakil">وکیل</span>
-                    <span class="template-right__select-rule" id="select-rule-movakel">موکل</span>
-                </div>
+            <div class="template-right__select-rule-wrapper form-hidden">
+                <span class="template-right__select-rule " id="select-rule-vakil">وکیل</span>
+                <span class="template-right__select-rule template-right__select-rule--active" id="select-rule-movakel">موکل</span>
+            </div>
+            <form action="" class="vakil-form form-hidden" id="vakil-form">
+                
                     <div class="vakil-form__image-wrapper">
                         <img class="vakil-form__profile-img" src="images/defaultProfile.png" title="تصویر پروفایل را انتخواب کنید"></img>
                         <input type="file" name="vakil-image" id="vakil-image" class="vakil-form__file-input">
@@ -112,12 +113,22 @@
                         
                     </div>
             </form>
-            <!-- <form action="" class="movakel-form" id="movakel-form">
-
+            <form action="" class="movakel-form form-hidden" id="movakel-form">
+                <h2 class="movakel-form__title">ساخت اکانت</h2>
+                <div class="movakel-form-input-wrapper">
+                    <span class="vakil-form__span-for-input"><input placeholder="نام و نام خانوادگی" type="text" id="movakel__name-family" name="movakel__name-family" class="vakil-form__input" required minlength="5" autocomplete="off"></span>
+                    
+                    <span class="vakil-form__span-for-input"><input placeholder="شماره تماس" title="شماره تلفن خودتان را وارد کنید" type="text" id="movakel__phone" required maxlength="11" class="vakil-form__input" autocomplete="off" name="movakel__phone" pattern="[0-9]{11}"></span>
+                </div>
+                
+                <button type="submit" class="movakel-form__submit">ساخت اکانت</button>
             </form>
             <form action="" class="login-form" id="login-form">
-
-            </form> -->
+                <h2 class="login-form__title">ورود به اکانت</h2>
+                <span class="vakil-form__span-for-input"><input placeholder="شماره تماس" title="شماره تلفن خودتان را وارد کنید" type="text" id="login__phone" required maxlength="11" class="vakil-form__input" autocomplete="off" name="login__phone" pattern="[0-9]{11}"></span>
+                <p class="login-form__create-account">اکانت ندارید؟<span class="link-text">ساخت اکانت</span></p>
+                <button type="submit" class="login-form__submit">ورود</button>
+            </form>
             
         </div>
         

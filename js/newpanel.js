@@ -2,6 +2,10 @@ let $ = document
 let get = function (id){return document.getElementById(id)}
 let getC = function (className){return document.querySelector('.'+className)}
 
+const movakelFormElem = get('movakel-form')
+const vakilFormElem = get('vakil-form')
+const loginFormElem = get('login-form') 
+
 ///theme handler 
 let localStorageTheme = localStorage.getItem('vakilDadTheme')
 if(localStorageTheme === "dark"){
@@ -55,6 +59,7 @@ if(localStorageTheme === "dark"){
 ////////////// select rule toggler
 
 
+const selectRuleWrapper = $.querySelector('.template-right__select-rule-wrapper')
 const selectRuleBtns = $.querySelectorAll('.template-right__select-rule')
 const RuleBtnVakil = get('select-rule-vakil')
 const RuleBtnMovakel = get('select-rule-movakel')
@@ -62,10 +67,12 @@ const RuleBtnMovakel = get('select-rule-movakel')
 RuleBtnMovakel.addEventListener('click',function(){
     clearRuleBtnActives()
     this.classList.add('template-right__select-rule--active')
+    showMovakelForm()
 })
 RuleBtnVakil.addEventListener('click',function(){
     clearRuleBtnActives()
     this.classList.add('template-right__select-rule--active')
+    showvakilForm()
 })
 
 function clearRuleBtnActives(){
@@ -227,3 +234,25 @@ function removeSkill(skillInDOM){
     selectedSkillArr.splice(removeSkillIndex,'1')
     skillInDOM.remove()
 }
+
+///////////// intract with forms
+const createAccountBtn = getC('login-form__create-account') 
+
+function showMovakelForm(){
+    movakelFormElem.classList.remove('form-hidden')
+    vakilForm.classList.add('form-hidden')
+    loginFormElem.classList.add('form-hidden')
+}
+function showvakilForm(){
+    vakilForm.classList.remove('form-hidden')
+    movakelFormElem.classList.add('form-hidden')
+    loginFormElem.classList.add('form-hidden')
+}
+function showSelectRule(){
+    selectRuleWrapper.classList.remove('form-hidden')
+}
+
+createAccountBtn.addEventListener('click',function(){
+    showSelectRule()
+    showMovakelForm()
+})
