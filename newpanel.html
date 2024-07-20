@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vakil Dad</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/newpanel.css">
+    <script src="js/newpanel.js" defer></script>
+    <script src="js/stateAndCityLoader.js" defer></script>
+    <script src="js/skillPickLoader.js" defer></script>
+</head>
+<body> 
+    <svg class="hidden">
+        <symbol id="arrow-right-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M8.91003 19.9201L15.43 13.4001C16.2 12.6301 16.2 11.3701 15.43 10.6001L8.91003 4.08008" stroke="CurrentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="arrow-left-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M15 19.9201L8.47997 13.4001C7.70997 12.6301 7.70997 11.3701 8.47997 10.6001L15 4.08008" stroke="CurrentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="x-icon" class="icon icon-tabler icon-tabler-x" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+        </symbol>
+    </svg>
+    <div class="template">
+        <div class="temlate-left">
+            <img src="images/judgeicons/5.svg" alt="" class="temlate-left__img" id="temlate-left__img">
+            <!-- <h3 class="template-left__title">وکیل داد مرجع تخصصی وکیل یابی</h3>
+            <div class="template-left__icon-wrapper">
+                <div class="round-border" id="left-arrow">
+                    <svg class="arrow-left">
+                        <use href="#arrow-left-icon"></use>
+                    </svg>
+                </div>
+                <div class="round-border" id="right-arrow">
+                    <svg class="arrow-right">
+                        <use href="#arrow-right-icon"></use>
+                    </svg>
+                </div>
+            </div> -->
+        </div>
+        <div class="temlate-right">
+            <div class="template-right__select-rule-wrapper form-hidden">
+                <span class="template-right__select-rule " id="select-rule-vakil">وکیل</span>
+                <span class="template-right__select-rule template-right__select-rule--active" id="select-rule-movakel">موکل</span>
+            </div>
+            <form action="" class="vakil-form form-hidden" id="vakil-form">
+                
+                    <div class="vakil-form__image-wrapper">
+                        <img class="vakil-form__profile-img" src="images/defaultProfile.png" title="تصویر پروفایل را انتخواب کنید"></img>
+                        <input type="file" name="vakil-image" id="vakil-image" class="vakil-form__file-input">
+                    </div>
+               <div class="tab-wrapper">
+                <div class="tab">
+                    <h2 class="tab__header">مشخصات فردی</h2>
+                    <span class="vakil-form__span-for-input"><input placeholder="نام و نام خانوادگی" type="text" id="vakil__name-family" name="vakil__name-family" class="vakil-form__input" required minlength="5" autocomplete="off"></span>
+                    <span class="vakil-form__span-for-input"><input placeholder="شماره تماس" title="شماره تلفن خودتان را وارد کنید" type="text" id="vakil__phone" required maxlength="11" class="vakil-form__input" autocomplete="off" name="vakil__phone" pattern="[0-9]{11}"></span>
+                    <span class="vakil-form__span-for-input"><input placeholder="ایمیل" title="ایمیل خودتان را وارد کنید" type="email" id="vakil__email" required  class="vakil-form__input" autocomplete="off" name="vakil__email"></span>
+                    <div class="vakil-form__radio-wrapper">
+                        <h3 class="vakil-form__gender-title">جنسیت:</h3>
+                        <span>
+                            <input class="vakil-form__radio" type="radio" id="vakil-men-radio" value="men" name="vakil-gender" checked>
+                            <label for="vakil-men-radio" class="vakil-form__radio-label">مرد</label>
+                        </span>
+                        <span>
+                            <input class="vakil-form__radio" type="radio" id="vakil-women-radio" value="women" name="vakil-gender">
+                            <label for="vakil-women-radio" class="vakil-form__radio-label">زن</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="tab">
+                    <h2 class="tab__header">اطلاعات وکالتی</h2>
+                    <span class="vakil-form__span-for-input"><input placeholder="شماره پروانه وکالت" type="text" id="vakil__parvaneNumber" required maxlength="5" class="vakil-form__input" autocomplete="off" name="vakil__parvane" pattern="[0-9]{5}"></span>
+                    <!-- <label for="vakil__parvaneYearss" class="vakil-form__label">سال اخذ پروانه</label> -->
+                    <span class="vakil-form__span-for-input"><select placeholder="سال اخذ پروانه" id="vakil__parvaneYear" required class="vakil-form__input" name="vakil__parvaneYear"><option value="optionParvaneOPtion">سال اخذ پروانه</option></select></span>
+                    <span class="vakil-form__span-for-input"><input placeholder="شماره کارت بانکی" type="text" id="vakil__cardNumber" required maxlength="16" class="vakil-form__input" autocomplete="off" name="vakil__card-number" pattern="[0-9]{16}"></span>
+                    
+                    <!-- <span class="vakil-form__span-for-input"><input placeholder="شماره کارت بانکی" type="text" id="vakil__cardNumber" required maxlength="16" class="vakil-form__input" autocomplete="off" name="vakil__card-number" pattern="[0-9]{11}"></span> -->
+                </div>
+                <div class="tab">
+                        <h2 class="tab__header">انتخاب شهر و استان</h2>
+                        <span class="vakil-form__span-for-input"><select id="vakil__state" required class="vakil-form__input state-select" name="vakil__state" ></select></span>
+                        <span class="vakil-form__span-for-input"><select id="vakil__city" required class="vakil-form__input city-select" name="vakil__city" ></select></span>
+                        <textarea class="vakil-form__text-area" name="vakil-about" id="vakil-about" rows="3" placeholder="توضیحات راجب خودتان" maxlength="300"></textarea>
+                    </div>
+                    <div class="tab">
+                        <h2 class="tab__header">اطلاعات شخصی</h2>
+                        <span class="vakil-form__span-for-input"><input placeholder="شماره تلفن ثابت" title="شماره تلفن ثابت خودتان را وارد کنید" type="text" id="vakil__landline-number" required maxlength="11" class="vakil-form__input" autocomplete="off" name="vakil__landline-number"></span>
+                        <textarea class="vakil-form__text-area" name="vakil-address" id="vakil-address" rows="5" placeholder="آدرس" maxlength="300"></textarea>
+                    </div>
+                    <div class="tab">
+                        <h2 class="tab__header">انتخاب تخصص</h2>
+                        <span class="vakil-form__span-for-input"><select id="vakil__skill" required class="vakil-form__input skill-select" name="vakil__skill"></select></span>
+                        <ul class="skill-list">
+                        </ul>
+                </div>
+               </div>
+                    
+                    <!-- <div class="vakil-form__skill-picker" id="pick-skill-btn">انتخاب تخصص</div> -->
+                <!--             
+                <textarea class="vakil-form__text-area" name="vakil-about" id="vakil-about" rows="4" placeholder="توضیحات و تخصصات شما" maxlength="220"></textarea>
+                <textarea class="vakil-form__text-area" name="vakil-resume" id="vakil-resume" rows="4" placeholder="رزومه کاری شما" maxlength="220"></textarea> -->
+            
+                <!-- <div class="vakil-form__skill-picker" id="skill-picker">انتخاب تخصص</div> -->
+            <div class="vakil-form__btn-wrapper">
+                <div class="vakil-form__submit-btn" id="vakil-submit"><span class="z-index-5">ثبت</span></div>
+                <div class="vakil-form__perv-btn" id="vakil-perv"><span class="z-index-5">قبلی</span></div>
+            </div>
+
+                    <div class="vakil-form__step-wrapper">
+                        
+                    </div>
+            </form>
+            <form action="" class="movakel-form form-hidden" id="movakel-form">
+                <h2 class="movakel-form__title">ساخت اکانت</h2>
+                <div class="movakel-form-input-wrapper">
+                    <span class="vakil-form__span-for-input"><input placeholder="نام و نام خانوادگی" type="text" id="movakel__name-family" name="movakel__name-family" class="vakil-form__input" required minlength="5" autocomplete="off"></span>
+                    
+                    <span class="vakil-form__span-for-input"><input placeholder="شماره تماس" title="شماره تلفن خودتان را وارد کنید" type="text" id="movakel__phone" required maxlength="11" class="vakil-form__input" autocomplete="off" name="movakel__phone" pattern="[0-9]{11}"></span>
+                </div>
+                
+                <button type="submit" class="movakel-form__submit">ساخت اکانت</button>
+            </form>
+            <form action="" class="login-form" id="login-form">
+                <h2 class="login-form__title">ورود به اکانت</h2>
+                <span class="vakil-form__span-for-input"><input placeholder="شماره تماس" title="شماره تلفن خودتان را وارد کنید" type="text" id="login__phone" required maxlength="11" class="vakil-form__input" autocomplete="off" name="login__phone" pattern="[0-9]{11}"></span>
+                <p class="login-form__create-account">اکانت ندارید؟<span class="link-text">ساخت اکانت</span></p>
+                <button type="submit" class="login-form__submit">ورود</button>
+            </form>
+            
+        </div>
+        
+    </div>
+  
+</body>
+</html>
