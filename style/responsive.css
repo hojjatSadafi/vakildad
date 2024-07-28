@@ -1,16 +1,10 @@
 @media screen and (max-width: 2000px){
-    .main-head__img{
-        top: unset ;
-        bottom: -25rem ;
-    }
+   
 }
 @media screen and (max-width: 1400px){
 }
 @media screen and (max-width: 1200px){
-    .main-head__img{
-        top: 0 !important;
-        bottom: 0px !important;
-    }
+    
 }
 @media screen and (max-width: 992px){
     .header__theme-changer {
@@ -162,19 +156,9 @@
 }
 
 @media screen and (max-width: 576px){
-    .main-head__sub-title{
-        font-size: 3.5rem;
-    }
-    .main-head__main-title{
-        font-size: 4rem;
-    }
-    .main-head{
-        background-image: url(../images/mobile-bg.jpg);
-        background-position-x: center;
-        background-position-y: center;
-        
-        min-height: 60rem;
-    }
+    
+  
+ 
     .services__btn-wrapper{
         flex-wrap: wrap;
         max-width: 80%;
@@ -210,14 +194,7 @@
     }
 }
 @media screen and (max-width: 400px){
-    .main-head-content-wrapper{
-        text-align: center;
-    }
-    .main-head__main-title{
-        font-size: 3rem;
-    }
-    .main-head{
-    }
+   
     .services__link{
         width: 95%;
     }

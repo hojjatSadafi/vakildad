@@ -16,6 +16,18 @@
     src: url(../fonts/Vazir.ttf);
 }
 @font-face {
+    font-family:dana;
+    src: url(../fonts/DanaFaNum-Regular.ttf);
+}
+@font-face {
+    font-family:danaBold;
+    src: url(../fonts/DanaFaNum-ExtraBold.ttf);
+}
+@font-face {
+    font-family:danaMedium;
+    src: url(../fonts/DanaFaNum-Medium.ttf);
+}
+@font-face {
     font-family:poppinsBold;
     src: url(../fonts/Poppins-Bold.ttf);
 }
@@ -53,7 +65,7 @@ a {
 .login-btn {
     background-color: var(--primary-color);
     color: #fff;
-    border-radius: 1rem;
+    border-radius: .4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,7 +76,15 @@ a {
 .login-btn:hover{
     transform: scale(1.1);
 }
-
+.fade-circle{
+    width: 20rem;
+    height: 20rem;
+    background-color: var(--primary-color);
+    filter: blur(10rem);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+}
 /* helper class */
 .flex{
     display: flex;
@@ -73,13 +93,22 @@ a {
     color: #fff;
     text-shadow: 0 0 1rem #323232;
 }
+/* custom scroll */
+::-webkit-scrollbar{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+    position: relative;
+}
+
 
 body {
     font-size: 1.6rem;
     min-height: 100vh;
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: vazir;
+    font-family: dana;
     /* cursor: url('../images/jobs-judge-gavel-and-wig-cursor-a.png'), auto; */
 }
 ::selection{
@@ -349,75 +378,51 @@ mobile-menus
 /* 
 section main-head
 */
-.main-head {
-    /* background-image: url(../images/headerPic2.jpg); */
-     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed; 
-    width: 100%;
-    min-height: 50rem;
-    border-bottom-right-radius: 5rem;
-    border-bottom-left-radius: 5rem;
-    display: flex;
-    align-items: stretch;
-    position: relative;
-    overflow: hidden;
+.main-head{
+
 }
-.main-head__img{
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    object-fit: cover;
-    width: 100%;
-    border-bottom-right-radius: 5rem;
-    border-bottom-left-radius: 5rem;
-    background-attachment: fixed;
+.main-head .row{
+    justify-content: space-between;
 }
-.main-head .container{
-    
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-}
-.main-head-content-wrapper {
-    width: max-content;
+/* right */
+.main-head__details {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    color: #fff;
-}
-.main-head__sub-title {
-    font-size: 5rem;
-    text-shadow: 0 0 1rem var(--primary-color);   
-    font-family: title;
-}
-.main-head__main-title {
-    font-size: 5.5rem;
-    text-shadow: 0 0 1rem var(--primary-color);   
-    font-family: title;
-}
-.main-head__button-wrapper {
-    display: flex; 
-    align-items: center;
     width: 100%;
-    justify-content: space-between;
+    height: 100%;
+    gap: 5rem;
 }
-.main-head__button {
-    padding: 1.5rem 2rem;
+.main-head__title {
+    font-size: 4rem;
+    font-family: danaBold;
+    transition: var(--app-transition);
 }
-.main-head__button-bordered{
-    border: 2px solid var(--primary-color);
-    color: #fff;
-    text-shadow: 2px 2px 3px var(--primary-color);
-    font-weight: bold;
-    border-radius: 1rem;   
-    backdrop-filter: blur(7px);
+
+.main-head__caption {
+    font-size: 2rem;
+    font-family: vazir;
+    font-family: danaMedium;
 }
+.main-head__btn {
+    padding: 1rem 1.5rem;
+    background-color: var(--primary-color);
+    width: max-content;
+    border-radius: .4rem;
+}
+.main-head__circle{
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto 0px;
+}
+/* left */
+.main-head__img{
+    width: 100%;
+}
+
+
+
 /* info boxs */
 .info-box {
     width: 100%;
