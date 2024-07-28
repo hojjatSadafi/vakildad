@@ -35,6 +35,7 @@
 /*  */
 :root {
     --primary-color: #1e88e5;
+    --darker-primary-color: #1565c0;
     --secondery-color: #ff9800;
     --text-color: #616161;
     --bg-color: #fff;
@@ -42,6 +43,7 @@
     --negative-bg-color: #1F2935;
     --zero-to-255:0;
     --app-transition: all 180ms ease-in;
+    --btn-linear:linear-gradient(90deg,var(--primary-color),var(--darker-primary-color));
     scroll-behavior: smooth;
 }
 html.dark{
@@ -63,7 +65,7 @@ a {
 
 /* component */
 .login-btn {
-    background-color: var(--primary-color);
+    background-image: var(--btn-linear);
     color: #fff;
     border-radius: .4rem;
     display: flex;
@@ -406,9 +408,10 @@ section main-head
 }
 .main-head__btn {
     padding: 1rem 1.5rem;
-    background-color: var(--primary-color);
+    background-image: var(--btn-linear);
     width: max-content;
     border-radius: .4rem;
+    color: #fff;
 }
 .main-head__circle{
     right: 0;
