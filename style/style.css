@@ -73,7 +73,7 @@ a {
     justify-content: center;
     padding: .5rem 2rem;
     transition: var(--app-transition);
-    font-family: vazir;
+    font-family: dana;
 }
 .login-btn:hover{
     transform: scale(1.1);
@@ -94,6 +94,9 @@ a {
 .white{
     color: #fff;
     text-shadow: 0 0 1rem #323232;
+}
+.hidden{
+    display: none;
 }
 /* custom scroll */
 ::-webkit-scrollbar{
