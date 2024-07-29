@@ -45,6 +45,9 @@ const servicesLinks = $.querySelectorAll('.services__link')
 const servicesBtn1 = $.getElementById('services-btn-1')
 const servicesBtn2 = $.getElementById('services-btn-2')
 const servicesBtn3 = $.getElementById('services-btn-3')
+const servicesContent1 = $.querySelector('.services__content')
+const servicesContent2 = $.querySelector('.find-form')
+const servicesContent3 = $.querySelector('.legal-info')
 const insertServiceBox = $.querySelector('.insert-service-box')
 
 servicesLinks.forEach(function(servicesLink){
@@ -61,21 +64,8 @@ servicesLinks.forEach(function(servicesLink){
 })
 function serviceGenerator(){
     if (servicesBtn1.classList.contains('services__link--active')) {
-        insertServiceBox.innerHTML = ''
-        insertServiceBox.insertAdjacentHTML('beforeend',`
-        <form class="services__content" action="" method="post">
-        <textarea name="question-area" id="question-area" cols="30" rows="10" placeholder="سوال خود را بنویسید..." class="services__text-area" maxlength="1400" minlength="100"></textarea>
-        <div class="services__select-wrapper">
-            <select name="state" id="state-select" class="services__select-box state-select">
-            </select>
-            <select name="city" id="city-select" class="services__select-box city-select">
-            </select>
-        </div>
-        <div class="services__form-submit-btn" id="service1-submit-btn">ارسال</div>
-        </form>`)
-        const stateSelectBox = $.getElementById('state-select')
-        const citySelectBox = $.getElementById('city-select')
-        cityAndStateGenerator(stateSelectBox,citySelectBox)
+        hideAllServicesForms()
+        servicesContent1.classList.add('services-show')
 
         const service1SubmitBtn = $.getElementById('service1-submit-btn')
         service1SubmitBtn.addEventListener('click',function(){
@@ -88,22 +78,10 @@ function serviceGenerator(){
         })
 
     } else if (servicesBtn2.classList.contains('services__link--active')){
-        insertServiceBox.innerHTML = ''
-        insertServiceBox.insertAdjacentHTML('beforeend',`
-        <form action="" class="find-form">
-            <select name="state" id="state-select" class="find-form__select state-select">
-                
-            </select>
-            <select name="city" id="city-select" class="find-form__select city-select">
-                
-            </select>
-            <select name="skill" id="skill-select" class="find-form__select">
-                <option value="everyskill">هر تخصصی</option>
-            </select>
-            <input type="text" maxlength="30" placeholder="جستجو در نام..." class="find-form__select">
-            <div class="services__form-submit-btn" id="services2-submit-btn">جستجو</div>
-        </form>
-        `)
+       
+        hideAllServicesForms()
+        servicesContent2.classList.add('services-show')
+
         let stateSelectBox = $.getElementById('state-select')
         let citySelectBox = $.getElementById('city-select')
         // cityAndStateGenerator(stateSelectBox,citySelectBox)
@@ -115,20 +93,17 @@ function serviceGenerator(){
             $.querySelector('.find-form').submit()
         })
 
-    } else if (servicesBtn3.classList.contains('services__link--active')){
-        insertServiceBox.innerHTML = ''
-        insertServiceBox.insertAdjacentHTML('beforeend',`
-        <form action="" class="legal-info">
-        <select name="legal-info-select" class="legal-info__select" id="">
-            <option value="everyskill">هر تخصصی</option>
-        </select>
-        <div class="services__form-submit-btn">جستجو</div>
-        </form>
-        `)
+    } else if (servicesBtn3.classList.contains('services__link--active')){    
+        hideAllServicesForms()
+        servicesContent3.classList.add('services-show')
     }
 }
 
-
+function hideAllServicesForms(){
+    servicesContent1.classList.remove('services-show')
+    servicesContent2.classList.remove('services-show')
+    servicesContent3.classList.remove('services-show')
+}
 
 
 // 
@@ -150,4 +125,4 @@ function copyTextFunction() {
     navigator.clipboard.writeText(copyText.textContent);
 
     alert("محتوا کپی شد: " + copyText.innerHTML.trim());
-  }
+}

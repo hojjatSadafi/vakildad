@@ -62,6 +62,9 @@ a {
     text-decoration: none;
     color: inherit;
 }
+*{
+    font-family: dana;
+}
 
 /* component */
 .login-btn {
@@ -495,10 +498,10 @@ html.dark .info-box__box{
     display: flex;
     max-width: 50%;
     justify-content: center;
-    padding: 1rem;
+    padding-bottom: 2rem;
     margin: 0px auto;
     gap: 1.5rem;
-    
+    margin-bottom: 2rem;
 }
 .services__link{
     flex-basis: 30%;
@@ -528,6 +531,17 @@ html.dark .info-box__box{
 .insert-service-box{
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--negative-bg-color);
+    margin-bottom: 2rem;
+}
+.services-show{
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: unset !important;
+}
+.find-form,.services__content,.legal-info{
+    opacity: 0;
+    visibility: hidden;
+    height: 0px;
 }
 /* services 1 */
 .services__content {
@@ -535,7 +549,6 @@ html.dark .info-box__box{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 2rem;
 }
 .services__text-area {
     background-color: var(--section-bg-color);
@@ -574,8 +587,6 @@ html.dark .info-box__box{
     grid-template-columns: repeat(4,1fr) max-content;
     width: 100%;
     gap: 1rem;
-    padding: 1rem;
-    margin-top: 3rem;
 }
 .find-form__select {
     background-color: var(--section-bg-color);
@@ -589,7 +600,6 @@ html.dark .info-box__box{
 
 /* content service 2 */
 .service-content-Box {
-    margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(27rem,auto));
     gap: 1rem;
@@ -698,7 +708,6 @@ html.dark .info-box__box{
     width: 100%;
     justify-content: center;
     gap: .5rem;
-    margin-top: 2rem;
 }
 .legal-info__select {
     width: 80%;

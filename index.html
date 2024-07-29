@@ -193,7 +193,35 @@
                         <p class="services__link" id="services-btn-3">راهنمای حقوقی</p>
                 </div>
                 <div class="insert-service-box">
-                  
+                  <form class="services__content" action="" method="post">
+                    <textarea name="question-area" id="question-area" cols="30" rows="5" placeholder="سوال خود را بنویسید..." class="services__text-area" maxlength="1400" minlength="100"></textarea>
+                    <div class="services__select-wrapper">
+                        <select name="state" id="state-select" class="services__select-box state-select">
+                        </select>
+                        <select name="city" id="city-select" class="services__select-box city-select">
+                        </select>
+                    </div>
+                    <div class="services__form-submit-btn" id="service1-submit-btn">ارسال</div>
+                  </form>
+                  <form action="" class="find-form">
+                    <select name="state" id="state-select" class="find-form__select state-select">
+                        
+                    </select>
+                    <select name="city" id="city-select" class="find-form__select city-select">
+                        
+                    </select>
+                    <select name="skill" id="skill-select" class="find-form__select">
+                        <option value="everyskill">هر تخصصی</option>
+                    </select>
+                    <input type="text" maxlength="30" placeholder="جستجو در نام..." class="find-form__select">
+                    <div class="services__form-submit-btn" id="services2-submit-btn">جستجو</div>
+                  </form>
+                  <form action="" class="legal-info services-show">
+                    <select name="legal-info-select" class="legal-info__select" id="">
+                        <option value="everyskill">هر تخصصی</option>
+                    </select>
+                    <div class="services__form-submit-btn">جستجو</div>
+                  </form>
                 </div>
                 <div class="service-content-Box">
                     <div class="profile-card">
