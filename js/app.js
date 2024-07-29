@@ -39,15 +39,6 @@ function changeTheme(){
 
 
 
-////////
-
-// let loginBtns = $.querySelectorAll('.login-btn')
-// let primaryColor = (getComputedStyle(document.documentElement)).getPropertyValue('--primary-color')
-// let primaryColorNoSharp = primaryColor.slice(1)
-// loginBtns.forEach(function(btn){
-//     btn.setAttribute('href',`loginForm.html?PColor=${primaryColorNoSharp}`)
-// })
-
 ///////////////////////////// services 
 const servicesLinks = $.querySelectorAll('.services__link')
 
