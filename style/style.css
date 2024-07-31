@@ -25,6 +25,10 @@
 }
 @font-face {
     font-family:danaBold;
+    src: url(../fonts/DanaFaNum-Bold.woff);
+}
+@font-face {
+    font-family:danaExtraBold;
     src: url(../fonts/DanaFaNum-ExtraBold.ttf);
 }
 @font-face {
@@ -413,7 +417,7 @@ section main-head
 }
 .main-head__title {
     font-size: 4rem;
-    font-family: danaBold;
+    font-family: danaExtraBold;
     transition: var(--app-transition);
 }
 
@@ -497,6 +501,7 @@ html.dark .info-box__box{
     text-align: center;
     font-size: 3rem;
     margin-bottom: 2rem;
+    font-family: danaBold;
 }
 .services__btn-wrapper{
     border-bottom: 1px solid var(--negative-bg-color);
@@ -537,6 +542,14 @@ html.dark .info-box__box{
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--negative-bg-color);
     margin-bottom: 2rem;
+    position: relative;
+}
+.insert-service-box__circle{
+    bottom: -50%;
+    right: 0;
+    left:0;
+    margin: 0px auto;
+    filter: blur(12rem);
 }
 .services-show{
     opacity: 1 !important;
@@ -605,6 +618,9 @@ html.dark .info-box__box{
 
 /* content service 2 */
 .service-content-Box {
+  
+}
+.find-wrapper{
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(20rem,auto));
     gap: 1rem;
@@ -638,7 +654,7 @@ html.dark .info-box__box{
     width: 8rem;
     height: 8rem;
     border-radius: 50%;
-    border: 1px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
     position: absolute;
     top: -4rem;
 }
