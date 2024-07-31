@@ -51,6 +51,15 @@
     .description-box{
         max-width: 50%;
     }
+
+    .get-Counseling__wrapper{
+        grid-template-columns: 1fr;
+    }
+
+    .Counseling-box__info-wrapper{
+        font-size: 1.4rem;
+    }
+ 
 }
 @media screen and (max-width: 768px){
     .header-wrapper{
@@ -167,6 +176,8 @@
     .footer__title::after{
         right: -50%;
     }
+
+  
 }
 
 @media screen and (max-width: 576px){

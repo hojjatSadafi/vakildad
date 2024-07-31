@@ -685,54 +685,67 @@ html.dark .info-box__box{
     font-size: 1.5rem;
     
 }
-/* .profile-card {
-    border: 2px solid var(--primary-color);
+
+
+.get-Counseling__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.Counseling-box {
     padding: 1rem;
-    border-radius: 1rem;
-    height: max-content;
-}
-.profile-card .flex{
-    gap: 1rem;
-}
-.profile-card__img-wrapper {
-    flex-basis: 35%;
-    overflow: hidden;
-    border-radius: 50%;
     border: 2px solid var(--primary-color);
-    max-height: 17rem;
-}
-.profile-card__img {
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
-}
-.profile-card__left {
-    flex-basis: 63%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.profile-card__name-family {
-    font-size: 1.8rem;
-}
-.profile-card__state-city {
-    font-size: 1.4rem;
-}
-.profile-card__btn-wrapper {
-    display: flex;
-    gap: .6rem;
-    justify-content: center;
+    border-radius: .5rem;
     
 }
-.profile-card__btn {
+.Counseling-box__info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-family: danaBold;
+}
+.Counseling-box__state-city {
+
+}
+.Counseling-box__skill {
+    /* border: 1px solid var(--primary-color); */
     background-color: var(--primary-color);
+    padding: .5rem;
+    font-family: dana;
+    border-radius: .5rem;
     color: #fff;
-    padding: .5rem .8rem;
-    border-radius: .4rem;
-    font-size: 1.4rem;
-    text-align: center;
-    
-} */
+}
+.Counseling-box__date {
+}
+.Counseling-box__text {
+    line-height: 1.8rem;
+}
+.Counseling-box__see-answer {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    justify-content: start;
+    padding-top: .5rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--primary-color);
+    cursor: pointer;
+    width: 100%;
+}
+.Counseling-box__see-answer-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--section-bg-color);
+    border: 1px solid var(--primary-color);
+}
+.Counseling-box__see-answer-text {
+
+}
+.Counseling-box__see-answer-icon {
+    margin-right: auto;
+}
+
 /* legal info */
 .legal-info {
     display: flex;
