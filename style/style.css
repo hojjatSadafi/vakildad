@@ -2,6 +2,10 @@
     font-family: soraya;
     src: url(../fonts/A_Soraya.ttf);
 }
+@font-face {
+    font-family: morabbaBold;
+    src: url(../fonts/Morabba-Bold.woff);
+}
 
 @font-face {
     font-family: BkoodakBold;
@@ -16,6 +20,22 @@
     src: url(../fonts/Vazir.ttf);
 }
 @font-face {
+    font-family:dana;
+    src: url(../fonts/DanaFaNum-Regular.ttf);
+}
+@font-face {
+    font-family:danaBold;
+    src: url(../fonts/DanaFaNum-Bold.woff);
+}
+@font-face {
+    font-family:danaExtraBold;
+    src: url(../fonts/DanaFaNum-ExtraBold.ttf);
+}
+@font-face {
+    font-family:danaMedium;
+    src: url(../fonts/DanaFaNum-Medium.ttf);
+}
+@font-face {
     font-family:poppinsBold;
     src: url(../fonts/Poppins-Bold.ttf);
 }
@@ -23,6 +43,7 @@
 /*  */
 :root {
     --primary-color: #1e88e5;
+    --darker-primary-color: #1565c0;
     --secondery-color: #ff9800;
     --text-color: #616161;
     --bg-color: #fff;
@@ -30,6 +51,7 @@
     --negative-bg-color: #1F2935;
     --zero-to-255:0;
     --app-transition: all 180ms ease-in;
+    --btn-linear:linear-gradient(90deg,var(--primary-color),var(--darker-primary-color));
     scroll-behavior: smooth;
 }
 html.dark{
@@ -48,23 +70,34 @@ a {
     text-decoration: none;
     color: inherit;
 }
+*{
+    font-family: dana;
+}
 
 /* component */
 .login-btn {
-    background-color: var(--primary-color);
+    background-image: var(--btn-linear);
     color: #fff;
-    border-radius: 1rem;
+    border-radius: .4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: .5rem 2rem;
     transition: var(--app-transition);
-    font-family: vazir;
+    font-family: dana;
 }
 .login-btn:hover{
     transform: scale(1.1);
 }
-
+.fade-circle{
+    width: 20rem;
+    height: 20rem;
+    background-color: var(--primary-color);
+    filter: blur(10rem);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+}
 /* helper class */
 .flex{
     display: flex;
@@ -73,13 +106,31 @@ a {
     color: #fff;
     text-shadow: 0 0 1rem #323232;
 }
+.hidden{
+    display: none;
+}
+/* custom scroll */
+::-webkit-scrollbar{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+    position: relative;
+    border-radius: .3rem;
+}
+select::-webkit-scrollbar{
+    width: 5px;
+}
+select::-webkit-scrollbar-thumb{
+    background-color: var(--darker-primary-color);
+}
 
 body {
     font-size: 1.6rem;
     min-height: 100vh;
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: vazir;
+    font-family: dana;
     /* cursor: url('../images/jobs-judge-gavel-and-wig-cursor-a.png'), auto; */
 }
 ::selection{
@@ -120,7 +171,7 @@ body {
 
 .header__logo-text {
     font-size: 2rem;
-    font-family: soraya;
+    font-family: morabbaBold;
 }
 
 .header__logo-box svg ,.header__mobile-logo-box svg {
@@ -349,75 +400,52 @@ mobile-menus
 /* 
 section main-head
 */
-.main-head {
-    /* background-image: url(../images/headerPic2.jpg); */
-     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed; 
-    width: 100%;
-    min-height: 50rem;
-    border-bottom-right-radius: 5rem;
-    border-bottom-left-radius: 5rem;
-    display: flex;
-    align-items: stretch;
-    position: relative;
-    overflow: hidden;
+.main-head{
+
 }
-.main-head__img{
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    object-fit: cover;
-    width: 100%;
-    border-bottom-right-radius: 5rem;
-    border-bottom-left-radius: 5rem;
-    background-attachment: fixed;
+.main-head .row{
+    justify-content: space-between;
 }
-.main-head .container{
-    
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-}
-.main-head-content-wrapper {
-    width: max-content;
+/* right */
+.main-head__details {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    color: #fff;
-}
-.main-head__sub-title {
-    font-size: 5rem;
-    text-shadow: 0 0 1rem var(--primary-color);   
-    font-family: title;
-}
-.main-head__main-title {
-    font-size: 5.5rem;
-    text-shadow: 0 0 1rem var(--primary-color);   
-    font-family: title;
-}
-.main-head__button-wrapper {
-    display: flex; 
-    align-items: center;
     width: 100%;
-    justify-content: space-between;
+    height: 100%;
+    gap: 5rem;
 }
-.main-head__button {
-    padding: 1.5rem 2rem;
+.main-head__title {
+    font-size: 4rem;
+    font-family: danaExtraBold;
+    transition: var(--app-transition);
 }
-.main-head__button-bordered{
-    border: 2px solid var(--primary-color);
+
+.main-head__caption {
+    font-size: 2rem;
+    font-family: vazir;
+    font-family: danaMedium;
+}
+.main-head__btn {
+    padding: 1rem 1.5rem;
+    background-image: var(--btn-linear);
+    width: max-content;
+    border-radius: .4rem;
     color: #fff;
-    text-shadow: 2px 2px 3px var(--primary-color);
-    font-weight: bold;
-    border-radius: 1rem;   
-    backdrop-filter: blur(7px);
 }
+.main-head__circle{
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto 0px;
+}
+/* left */
+.main-head__img{
+    width: 100%;
+}
+
+
+
 /* info boxs */
 .info-box {
     width: 100%;
@@ -473,17 +501,17 @@ html.dark .info-box__box{
     text-align: center;
     font-size: 3rem;
     margin-bottom: 2rem;
+    font-family: danaBold;
 }
 .services__btn-wrapper{
-    border: 1px solid var(--negative-bg-color);
+    border-bottom: 1px solid var(--negative-bg-color);
     display: flex;
     max-width: 50%;
     justify-content: center;
-    padding: 1rem;
-    border-radius: 2rem;
+    padding-bottom: 2rem;
     margin: 0px auto;
     gap: 1.5rem;
-    
+    margin-bottom: 2rem;
 }
 .services__link{
     flex-basis: 30%;
@@ -513,6 +541,25 @@ html.dark .info-box__box{
 .insert-service-box{
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--negative-bg-color);
+    margin-bottom: 2rem;
+    position: relative;
+}
+.insert-service-box__circle{
+    bottom: -50%;
+    right: 0;
+    left:0;
+    margin: 0px auto;
+    filter: blur(12rem);
+}
+.services-show{
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: unset !important;
+}
+.find-form,.services__content,.legal-info{
+    opacity: 0;
+    visibility: hidden;
+    height: 0px;
 }
 /* services 1 */
 .services__content {
@@ -520,7 +567,6 @@ html.dark .info-box__box{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 2rem;
 }
 .services__text-area {
     background-color: var(--section-bg-color);
@@ -559,8 +605,6 @@ html.dark .info-box__box{
     grid-template-columns: repeat(4,1fr) max-content;
     width: 100%;
     gap: 1rem;
-    padding: 1rem;
-    margin-top: 3rem;
 }
 .find-form__select {
     background-color: var(--section-bg-color);
@@ -574,21 +618,28 @@ html.dark .info-box__box{
 
 /* content service 2 */
 .service-content-Box {
-    margin-top: 3rem;
+  
+}
+.find-wrapper{
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(27rem,auto));
+    grid-template-columns: repeat(auto-fill,minmax(20rem,auto));
     gap: 1rem;
+    row-gap: 5rem;
+    padding-top: 5rem;
 }
 .profile-card {
-    background-image: linear-gradient(222deg,var(--primary-color),#fff);
+    background-color: rgba(var(--zero-to-255), var(--zero-to-255), var(--zero-to-255), .1); 
+    border: 1px solid var(--primary-color);
     border-radius: 2.5rem;
-    
     padding: 3rem 1rem;
+    padding-top: 5rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
     justify-content: space-between;
     align-items: center;
+    color: var(--text-color);
+    position: relative;
 }
 .profile-card__star-wrapper {
     display: flex;
@@ -597,10 +648,15 @@ html.dark .info-box__box{
 .profile-card__star-wrapper svg{
     width: 2rem;
     height: 2rem;
+    color: var(--text-color);
 }
 .profile-card__image {
-    width: 50%;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    position: absolute;
+    top: -4rem;
 }
 .profile-card__content-wrapper {
     text-align: center;
@@ -609,17 +665,16 @@ html.dark .info-box__box{
     gap: .5rem;
 }
 .profile-card__name {
-    font-size: 1.8rem;
-    text-shadow: 0 1px .5rem #323232;
-    color: #fff;
+    font-family: danaBold;
+    line-height: 2.2rem;
 }
 .profile-card__city {
     font-size: 1.5rem;
-    text-shadow: 0 1px .5rem #323232;
-    color: #fff;
+    
 }
 .profile-card__button-wrapper {
     display: flex;
+    flex-direction: column;
     gap: .5rem;
 }
 .profile-card__button {
@@ -628,62 +683,75 @@ html.dark .info-box__box{
     color: #fff;
     border-radius: .5rem;
     font-size: 1.5rem;
+    
 }
-/* .profile-card {
-    border: 2px solid var(--primary-color);
+
+
+.get-Counseling__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.Counseling-box {
     padding: 1rem;
-    border-radius: 1rem;
-    height: max-content;
-}
-.profile-card .flex{
-    gap: 1rem;
-}
-.profile-card__img-wrapper {
-    flex-basis: 35%;
-    overflow: hidden;
-    border-radius: 50%;
     border: 2px solid var(--primary-color);
-    max-height: 17rem;
-}
-.profile-card__img {
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
-}
-.profile-card__left {
-    flex-basis: 63%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.profile-card__name-family {
-    font-size: 1.8rem;
-}
-.profile-card__state-city {
-    font-size: 1.4rem;
-}
-.profile-card__btn-wrapper {
-    display: flex;
-    gap: .6rem;
-    justify-content: center;
+    border-radius: .5rem;
     
 }
-.profile-card__btn {
+.Counseling-box__info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-family: danaBold;
+}
+.Counseling-box__state-city {
+
+}
+.Counseling-box__skill {
+    /* border: 1px solid var(--primary-color); */
     background-color: var(--primary-color);
+    padding: .5rem;
+    font-family: dana;
+    border-radius: .5rem;
     color: #fff;
-    padding: .5rem .8rem;
-    border-radius: .4rem;
-    font-size: 1.4rem;
-    text-align: center;
-    
-} */
+}
+.Counseling-box__date {
+}
+.Counseling-box__text {
+    line-height: 1.8rem;
+}
+.Counseling-box__see-answer {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    justify-content: start;
+    padding-top: .5rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--primary-color);
+    cursor: pointer;
+    width: 100%;
+}
+.Counseling-box__see-answer-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--section-bg-color);
+    border: 1px solid var(--primary-color);
+}
+.Counseling-box__see-answer-text {
+
+}
+.Counseling-box__see-answer-icon {
+    margin-right: auto;
+}
+
 /* legal info */
 .legal-info {
     display: flex;
     width: 100%;
     justify-content: center;
     gap: .5rem;
-    margin-top: 2rem;
 }
 .legal-info__select {
     width: 80%;

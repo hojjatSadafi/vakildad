@@ -400,6 +400,7 @@ select::-webkit-scrollbar-thumb{
     text-align: center;
     color: var(--text-color);
     transition: all 180ms ease 50ms;
+    user-select: none;
 }
 .vakil-form__submit-btn:hover,.vakil-form__perv-btn:hover{
     color: #1e88e5;
