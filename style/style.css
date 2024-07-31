@@ -2,6 +2,10 @@
     font-family: soraya;
     src: url(../fonts/A_Soraya.ttf);
 }
+@font-face {
+    font-family: morabbaBold;
+    src: url(../fonts/Morabba-Bold.woff);
+}
 
 @font-face {
     font-family: BkoodakBold;
@@ -162,7 +166,7 @@ body {
 
 .header__logo-text {
     font-size: 2rem;
-    font-family: soraya;
+    font-family: morabbaBold;
 }
 
 .header__logo-box svg ,.header__mobile-logo-box svg {
