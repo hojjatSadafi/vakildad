@@ -112,6 +112,7 @@ a {
 ::-webkit-scrollbar-thumb{
     background-color: var(--primary-color);
     position: relative;
+    border-radius: .3rem;
 }
 select::-webkit-scrollbar{
     width: 5px;
@@ -605,19 +606,24 @@ html.dark .info-box__box{
 /* content service 2 */
 .service-content-Box {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(27rem,auto));
+    grid-template-columns: repeat(auto-fill,minmax(20rem,auto));
     gap: 1rem;
+    row-gap: 5rem;
+    padding-top: 5rem;
 }
 .profile-card {
-    background-image: linear-gradient(222deg,var(--primary-color),#fff);
+    background-color: rgba(var(--zero-to-255), var(--zero-to-255), var(--zero-to-255), .1); 
+    border: 1px solid var(--primary-color);
     border-radius: 2.5rem;
-    
     padding: 3rem 1rem;
+    padding-top: 5rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
     justify-content: space-between;
     align-items: center;
+    color: var(--text-color);
+    position: relative;
 }
 .profile-card__star-wrapper {
     display: flex;
@@ -626,10 +632,15 @@ html.dark .info-box__box{
 .profile-card__star-wrapper svg{
     width: 2rem;
     height: 2rem;
+    color: var(--text-color);
 }
 .profile-card__image {
-    width: 50%;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    position: absolute;
+    top: -4rem;
 }
 .profile-card__content-wrapper {
     text-align: center;
@@ -638,17 +649,16 @@ html.dark .info-box__box{
     gap: .5rem;
 }
 .profile-card__name {
-    font-size: 1.8rem;
-    text-shadow: 0 1px .5rem #323232;
-    color: #fff;
+    font-family: danaBold;
+    line-height: 2.2rem;
 }
 .profile-card__city {
     font-size: 1.5rem;
-    text-shadow: 0 1px .5rem #323232;
-    color: #fff;
+    
 }
 .profile-card__button-wrapper {
     display: flex;
+    flex-direction: column;
     gap: .5rem;
 }
 .profile-card__button {
@@ -657,6 +667,7 @@ html.dark .info-box__box{
     color: #fff;
     border-radius: .5rem;
     font-size: 1.5rem;
+    
 }
 /* .profile-card {
     border: 2px solid var(--primary-color);
