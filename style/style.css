@@ -85,6 +85,7 @@ a {
     padding: .5rem 2rem;
     transition: var(--app-transition);
     font-family: dana;
+    user-select: none;
 }
 .login-btn:hover{
     transform: scale(1.1);
@@ -134,8 +135,8 @@ body {
     /* cursor: url('../images/jobs-judge-gavel-and-wig-cursor-a.png'), auto; */
 }
 ::selection{
-    background-color: var(--primary-color);
-    color: #fff;
+    color: var(--primary-color);
+    background-color: transparent;
 }
 /* +header+ */
 
@@ -419,12 +420,14 @@ section main-head
     font-size: 4rem;
     font-family: danaExtraBold;
     transition: var(--app-transition);
+    line-height: 4.5rem;
 }
 
 .main-head__caption {
     font-size: 2rem;
     font-family: vazir;
     font-family: danaMedium;
+    line-height: 2.5rem;
 }
 .main-head__btn {
     padding: 1rem 1.5rem;
@@ -432,6 +435,7 @@ section main-head
     width: max-content;
     border-radius: .4rem;
     color: #fff;
+    user-select: none;
 }
 .main-head__circle{
     right: 0;
@@ -528,6 +532,7 @@ html.dark .info-box__box{
     transition: all 180ms ease-in;
     /* transform: translateY(.2rem); */
     color: var(--text-color);
+    user-select: none;
 }
 .services__link:hover{
     transform: scale(1.1) translateY(0);
@@ -598,6 +603,7 @@ html.dark .info-box__box{
     width: max-content;
     color: #fff;
     cursor: pointer;
+    user-select: none;
 }
 /* services 2 */
 .find-form {
@@ -715,6 +721,7 @@ html.dark .info-box__box{
     font-family: dana;
     border-radius: .5rem;
     color: #fff;
+    user-select: none;
 }
 .Counseling-box__date {
 }
@@ -762,7 +769,6 @@ html.dark .info-box__box{
     color: var(--negative-bg-color);
     padding: .5rem;
     font-size: 1.6rem;
-    font-family: BkoodakBold;
 }
 .legal-info__btn {
     border: none;
