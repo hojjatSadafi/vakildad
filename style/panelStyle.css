@@ -25,8 +25,8 @@
     --primary-color: #1e88e5;
     --secondery-color: #ff9800;
     --text-color: #616161;
-    --bg-color: #fff;
-    --section-bg-color: #eeeeee;
+    --bg-color: #eeeeee;
+    --section-bg-color: #e0e0e0;
     --negative-bg-color: #1F2935;
     --app-transition: all 180ms ease-in;
     scroll-behavior: smooth;

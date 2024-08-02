@@ -48,6 +48,9 @@
     .info-box__box{
         flex-basis: 30%;
     }
+    .find-form {
+        grid-template-columns: repeat(4,1fr);
+    }
     .description-box{
         max-width: 50%;
     }
