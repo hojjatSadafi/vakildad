@@ -44,7 +44,7 @@
 :root {
     --primary-color: #1e88e5;
     --darker-primary-color: #1565c0;
-    --secondery-color: #ff9800;
+    --secondery-color: #66bb6a;
     --text-color: #616161;
     --bg-color: #eeeeee;
     --section-bg-color: #e0e0e0;
@@ -115,15 +115,7 @@ select:focus,textarea:focus{
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.fade-circle{
-    width: 20rem;
-    height: 20rem;
-    background-color: var(--primary-color);
-    filter: blur(10rem);
-    border-radius: 50%;
-    position: absolute;
-    z-index: -1;
-}
+
 /* helper class */
 .flex{
     display: flex;
@@ -149,6 +141,45 @@ select::-webkit-scrollbar{
 }
 select::-webkit-scrollbar-thumb{
     background-color: var(--darker-primary-color);
+}
+/* fade circles */
+.fade-circle{
+    width: 20rem;
+    height: 20rem;
+    background-color: var(--primary-color);
+    filter: blur(12rem);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+}
+.fade-circle2{
+    width: 15rem;
+    height: 15rem;
+    background-color: var(--secondery-color);
+    filter: blur(8rem);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+}
+.dark .fade-circle2{
+    filter: blur(12rem);
+}
+.main-head__circle{
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto 0px;
+}
+.info-box__circle{
+    left: 0;
+    bottom: 0rem;
+}
+.insert-service-box__circle{
+    bottom: -50%;
+    right: 0;
+    left:0;
+    margin: 0px auto;
+    filter: blur(12rem);
 }
 
 body {
@@ -462,12 +493,7 @@ section main-head
     color: #fff;
     user-select: none;
 }
-.main-head__circle{
-    right: 0;
-    bottom: 0;
-    top: 0;
-    margin: auto 0px;
-}
+
 /* left */
 .main-head__img{
     width: 100%;
@@ -588,13 +614,7 @@ html.dark .info-box__box{
     margin-bottom: 2rem;
     position: relative;
 }
-.insert-service-box__circle{
-    bottom: -50%;
-    right: 0;
-    left:0;
-    margin: 0px auto;
-    filter: blur(12rem);
-}
+
 .services-show{
     opacity: 1 !important;
     visibility: visible !important;
