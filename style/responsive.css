@@ -59,6 +59,9 @@
     .Counseling-box__info-wrapper{
         font-size: 1.4rem;
     }
+    .services__btn-wrapper{
+        max-width: unset;
+    }
  
 }
 @media screen and (max-width: 768px){
